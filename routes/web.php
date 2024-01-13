@@ -6,7 +6,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\MateriController;
-
+use App\Http\Controllers\SlideController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +33,5 @@ Route::middleware(['web', 'auth', 'App\Http\Middleware\CheckUserActivity'])->gro
     Route::resource('artikel', ArtikelController::class);
     Route::resource('playlist', PlaylistController::class);
     Route::resource('materi', MateriController::class);
+    Route::resource('slide', SlideController::class);
 });

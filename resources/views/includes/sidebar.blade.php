@@ -43,6 +43,7 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
+                <hr>
                 {{-- <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
@@ -71,6 +72,11 @@
                     <a href="{{ route('materi.index') }}">
                         <i class="fas fa-film"></i>
                         <p>Materi Video</p>
+                    </a>
+                <li class="nav-item nav-item {{ request()->is('slidr*') ? 'active' : '' }}">
+                    <a href="{{ route('slide.index') }}">
+                        <i class="fas fa-film"></i>
+                        <p>Slide Banner</p>
                     </a>
                 </li>
                 <li class="nav-item">
