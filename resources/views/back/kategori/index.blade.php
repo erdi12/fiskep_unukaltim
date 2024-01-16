@@ -48,13 +48,16 @@
                                         <td>{{ $row->slug }}</td>
                                         <td class="text-center">
 											<a href="{{ route('kategori.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
-											<form action="{{ route('kategori.destroy', $row->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin?')">
+											@csrf
+											@method('delete')
+											<a href="{{ route('kategori.destroy', $row->id) }}" method="POST" class="d-inline btn btn-danger btn-sm" data-confirm-delete="true">Hapus</a>
+											{{-- <form action="{{ route('kategori.destroy', $row->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin?')">
 												@csrf
 												@method('delete')
 												<button class="btn btn-danger btn-sm" type="submit">
 													<i class="fa fa-times"></i>
 												</button>
-											</form>
+											</form> --}}
 										</td>
                                     </tr>
                                 @empty

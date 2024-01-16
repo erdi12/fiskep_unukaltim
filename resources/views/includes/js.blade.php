@@ -137,4 +137,5 @@
 		CKEDITOR.replace( 'deskripsi_playlist' );
 		CKEDITOR.replace( 'deskripsi_artikel' );
 		CKEDITOR.replace( 'deskripsi_materi' );
+		CKEDITOR.replace( 'deskripsi_slide' );
 	</script>	

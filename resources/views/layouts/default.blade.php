@@ -15,5 +15,6 @@
 	</div>
 	<!--   Core JS Files   -->
 	@include('includes.js')
+	@include('sweetalert::alert')
 </body>
 </html>

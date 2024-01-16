@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class ArtikelController extends Controller
@@ -22,6 +23,12 @@ class ArtikelController extends Controller
     public function index()
     {
         $artikel = Artikel::all();
+
+        $title = 'Hapus Data!';
+        $text = 'Apakah Anda Yakin?';
+
+        confirmDelete($title, $text);
+
         return view ('back.artikel.index', [
             'artikel' => $artikel
         ]);
@@ -71,76 +78,9 @@ class ArtikelController extends Controller
 
         Artikel::create($data);
 
-        return redirect()->route('artikel.index')->with(['success' => 'Data Berhasil Tersimpan']);
+        Alert::success('Sukses!', 'Data Berhasil Tersimpan');
 
-        // percobaan ke 2
-        // $this->validate($request, [
-        //     'judul' => 'required|min:4',
-        //     'gambar_artikel' => 'image|nullable|max:512',
-        // ]);
-    
-        // $data = $request->all();
-        // $data['slug'] = Str::slug($request->judul);
-    
-        // if (Auth::check()) {
-        //     $data['user_id'] = Auth::id();
-        // }
-    
-        // $data['views'] = 0;
-    
-        // // Check file size before storing
-        // $maxFileSize = 512 * 1024; // 512 KB
-        // $uploadedFile = $request->file('gambar_artikel');
-    
-        // if ($uploadedFile && $uploadedFile->getSize() > $maxFileSize) {
-        //     return redirect()->back()->withInput()->withErrors(['gambar_artikel' => 'Ukuran file gambar terlalu besar. Maksimum 512 KB.']);
-        // }
-    
-        // $data['gambar_artikel'] = $uploadedFile->store('artikel');
-    
-        // Artikel::create($data);
-    
-        // return redirect()->route('artikel.index')->with(['success' => 'Data Berhasil Tersimpan']);
-
-
-        // Percobaan Ke 3
-        // $validator = Validator::make($request->all(), [
-        //     'judul' => 'required|min:4',
-        //     'gambar_artikel' => 'image|nullable|max:512',
-        // ]);
-    
-        // if ($validator->fails()) {
-        //     return redirect()
-        //         ->back()
-        //         ->withErrors($validator)
-        //         ->withInput();
-        // }
-    
-        // $data = $request->all();
-        // $data['slug'] = Str::slug($request->judul);
-    
-        // if (Auth::check()) {
-        //     $data['user_id'] = Auth::id();
-        // }
-    
-        // $data['views'] = 0;
-    
-        // // Check file size before storing
-        // $maxFileSize = 512 * 1024; // 512 KB
-        // $uploadedFile = $request->file('gambar_artikel');
-    
-        // if ($uploadedFile && $uploadedFile->getSize() > $maxFileSize) {
-        //     return redirect()
-        //         ->back()
-        //         ->withErrors(['gambar_artikel' => 'Ukuran file gambar terlalu besar. Maksimum 512 KB.'])
-        //         ->withInput();
-        // }
-    
-        // $data['gambar_artikel'] = $uploadedFile->store('artikel');
-    
-        // Artikel::create($data);
-    
-        // return redirect()->route('artikel.index')->with(['success' => 'Data Berhasil Tersimpan']);
+        return redirect()->route('artikel.index');
     }
 
     /**
@@ -199,7 +139,10 @@ class ArtikelController extends Controller
                 'user_id' => Auth::id(),
                 'views' => 0
             ]);
-            return redirect()->route('artikel.index')->with(['success' => 'Data Berhasil Diupdate']);
+
+            Alert::success('Sukses!', 'Data Berhasil Diupdate!');
+
+            return redirect()->route('artikel.index');
         } else {
             $uploadedFile = $request->file('gambar_artikel');
 
@@ -222,7 +165,10 @@ class ArtikelController extends Controller
                 'views' => 0,
                 'gambar_artikel' => $request->file('gambar_artikel')->store('artikel')
             ]);
-            return redirect()->route('artikel.index')->with(['success' => 'Data Berhasil Diupdate']);
+
+            Alert::success('Sukses!', 'Data Berhasil Diupdate!');
+
+            return redirect()->route('artikel.index');
         }
     }
 
@@ -240,6 +186,8 @@ class ArtikelController extends Controller
 
         $artikel->delete();
 
-        return redirect()->route('artikel.index')->with(['success' => 'Data Berhasil Dihapus']);
+        Alert::success('Data Terhapus', 'Data Berhasil Dihapus');
+
+        return redirect()->route('artikel.index');
     }
 }

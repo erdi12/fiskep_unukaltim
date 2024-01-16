@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\IklanController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\SlideController;
@@ -34,4 +35,5 @@ Route::middleware(['web', 'auth', 'App\Http\Middleware\CheckUserActivity'])->gro
     Route::resource('playlist', PlaylistController::class);
     Route::resource('materi', MateriController::class);
     Route::resource('slide', SlideController::class);
+    Route::resource('iklan', IklanController::class);
 });

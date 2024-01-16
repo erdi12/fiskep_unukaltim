@@ -132,7 +132,7 @@ class MateriController extends Controller
                 'judul_materi' => $request->judul_materi,
                 'deskripsi' => $request->deskripsi,
                 'slug' => Str::slug($request->judul_materi),
-                'playlisy_id' => $request->playlist_id,
+                'playlist_id' => $request->playlist_id,
                 'is_active' => $request->is_active,
                 'gambar_materi' => $request->file('gambar_materi')->store('materi')
             ]);

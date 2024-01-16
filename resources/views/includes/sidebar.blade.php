@@ -73,10 +73,16 @@
                         <i class="fas fa-film"></i>
                         <p>Materi Video</p>
                     </a>
-                <li class="nav-item nav-item {{ request()->is('slidr*') ? 'active' : '' }}">
+                <li class="nav-item nav-item {{ request()->is('slide*') ? 'active' : '' }}">
                     <a href="{{ route('slide.index') }}">
-                        <i class="fas fa-film"></i>
+                        <i class="fas fa-sliders-h"></i>
                         <p>Slide Banner</p>
+                    </a>
+                </li>
+                <li class="nav-item nav-item {{ request()->is('iklan*') ? 'active' : '' }}">
+                    <a href="{{ route('iklan.index') }}">
+                        <i class="fas fa-money-bill"></i>
+                        <p>Iklan</p>
                     </a>
                 </li>
                 <li class="nav-item">

@@ -20,37 +20,37 @@
 			<div class="card full-height">
 				<div class="card-header">
 					<div class="card-head-row">
-						<div class="card-title">Edit slide <i>{{ $slide->judul_slide }}</i></div>
-                        <a href="{{ route('slide.index') }}" class="btn btn-warning btn-sm ml-auto"><i class="fa fa-arrow-left"></i> Back</a>
+						<div class="card-title">Edit iklan <i>{{ $iklan->judul_iklan }}</i></div>
+                        <a href="{{ route('iklan.index') }}" class="btn btn-warning btn-sm ml-auto"><i class="fa fa-arrow-left"></i> Back</a>
 					</div>
 				</div>
 				<div class="card-body">
-					<form method="POST" action="{{ route('slide.update', $slide->id) }}" enctype="multipart/form-data">
+					<form method="POST" action="{{ route('iklan.update', $iklan->id) }}" enctype="multipart/form-data">
 						@csrf
                         @method('PUT')
 						<div class="form-group">
 							<label for="judul">Nama Judul</label>
-							<input type="text" name="judul_slide" class="form-control" id="text" value="{{ $slide->judul_slide }}">
+							<input type="text" name="judul" class="form-control" id="judul" value="{{ $iklan->judul }}">
 						</div>
                         <div class="form-group">
-                            <label for="body">Link Video Slide</label>
-                            <textarea id="link" name="link" class="form-control">{{ $slide->link }}</textarea>
+                            <label for="body">Link Video iklan</label>
+                            <textarea id="link" name="link" class="form-control">{{ $iklan->link }}</textarea>
                         </div>
                         <div class="form-group">
-                            <label for="gambar">Gambar slide</label>
-                            <input type="file" name="gambar_slide" class="form-control" accept="image/png, image/gif, image/jpeg, image/jpg">
-                            @error('gambar_slide')
+                            <label for="gambar">Gambar iklan</label>
+                            <input type="file" name="gambar_iklan" class="form-control" accept="image/png, image/gif, image/jpeg, image/jpg">
+                            @error('gambar_iklan')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                             <br>
                             <label for="gambar">Gambar Saat Ini</label><br class="mb-2">
-                            <img src="{{ asset('uploads/'.$slide->gambar_slide) }}" width="150" class="img-fluid">
+                            <img src="{{ asset('uploads/'.$iklan->gambar_iklan) }}" width="150" class="img-fluid">
                         </div>
                         <div class="form-group">
                             <label for="status">Status</label>
                             <select name="status" class="form-control">
-                                <option value="1" {{ $slide->status == '1' ? 'selected' : '' }} >Publish</option>
-                                <option value="0" {{ $slide->status == '0' ? 'selected' : '' }}>Draft</option>
+                                <option value="1" {{ $iklan->status == '1' ? 'selected' : '' }} >Publish</option>
+                                <option value="0" {{ $iklan->status == '0' ? 'selected' : '' }}>Draft</option>
                             </select>
                         </div>
 						<div class="form-group">

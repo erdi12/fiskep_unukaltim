@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PlaylistController extends Controller
 {
@@ -18,6 +19,12 @@ class PlaylistController extends Controller
     public function index()
     {
         $playlist = Playlist::all();
+
+        $title = 'Hapus Data!';
+        $text = 'Apakah Anda Yakin?';
+
+        confirmDelete($title, $text);
+
         return view('back.playlist.index', compact('playlist'));
     }
 
@@ -64,7 +71,9 @@ class PlaylistController extends Controller
 
         Playlist::create($data);
 
-        return redirect()->route('playlist.index')->with(['success' => 'Data Berhasil Tersimpan']);
+        Alert::success('Data Terhapus', 'Data Berhasil Tersimpan');
+
+        return redirect()->route('playlist.index');
     }
 
     /**
@@ -116,7 +125,10 @@ class PlaylistController extends Controller
                 'is_active' => $request->is_active,
                 'user_id' => Auth::id()
             ]);
-            return redirect()->route('playlist.index')->with(['success' => 'Data Berhasil Diupdate']);
+
+            Alert::success('Data Terhapus', 'Data Berhasil Diupdate');
+
+            return redirect()->route('playlist.index');
         } else {
             $uploadedFile = $request->file('gambar_playlist');
 
@@ -138,7 +150,10 @@ class PlaylistController extends Controller
                 'user_id' => Auth::id(),
                 'gambar_playlist' => $request->file('gambar_playlist')->store('playlist')
             ]);
-            return redirect()->route('playlist.index')->with(['success' => 'Data Berhasil Diupdate']);
+
+            Alert::success('Data Terhapus', 'Data Berhasil Diupdate');
+
+            return redirect()->route('playlist.index');
         }
     }
 
@@ -156,6 +171,8 @@ class PlaylistController extends Controller
 
         $playlist->delete();
 
-        return redirect()->route('playlist.index')->with(['success' => 'Data Berhasil Dihapus']);
+        Alert::success('Data Terhapus', 'Data Berhasil Dihapus');
+
+        return redirect()->route('playlist.index');
     }
 }
