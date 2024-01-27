@@ -4,7 +4,7 @@
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                     @foreach ($slide as $row)            
-                    <div class="carousel-item active">
+                    <div class="carousel-item active" style="margin-top: 4.4rem;">
                         <img src="{{ asset('uploads/'.$row->gambar_slide) }}" class="d-block img-fluid" alt="...">
                     </div>
                     {{-- <div class="carousel-item">

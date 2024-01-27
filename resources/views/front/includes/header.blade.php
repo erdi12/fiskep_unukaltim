@@ -1,6 +1,6 @@
 
 {{-- Nav Start --}}
-<section id="nav">
+<section id="nav" class="mb-5">
     <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
         <div class="container">
             <a class="navbar-brand" href="#">Navbar</a>

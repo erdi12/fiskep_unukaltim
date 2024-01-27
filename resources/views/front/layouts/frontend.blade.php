@@ -11,7 +11,7 @@
 
         @include('front.includes.header')
 
-        @include('front.includes.slider')
+        
 
         {{-- card start --}}
         <div class="container ">

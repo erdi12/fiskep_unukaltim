@@ -8,6 +8,7 @@
 	<link rel="icon" href="{{ asset('back/img/unu-kaltim.png') }}" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
+	<script src="{{ asset('ckeditor5/build/ckeditor.js')}}"></script>
 	<script src="{{ asset('back/js/plugin/webfont/webfont.min.js') }}"></script>
 	<script>
 		WebFont.load({

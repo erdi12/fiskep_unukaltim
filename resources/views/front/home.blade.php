@@ -1,4 +1,5 @@
 @extends('front.layouts.frontend')
+@include('front.includes.slider')
 
 @section('content')
 <div class="row">
@@ -7,8 +8,14 @@
             <div class="card">
                 <img src="{{ asset('uploads/'.$art->gambar_artikel) }}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{ $art->judul }}</h5>
-                    <p class="card-text">{!! $art->body !!}</p>
+                    
+                    <h5 class="card-title">
+                        <a href="{{ route('detail-artikel', $art->slug) }}" style="text-decoration: none;">
+                            {{ $art->judul }}
+                        </a>
+                    </h5>
+                    <p>{{ $art->updated_at->diffForHumans() }}</p>
+                    <p class="">{!! Str::limit($art->body, 100) !!}</p>
                 </div>
                 <div class="card-body">
                     <a href="#" class="card-link"> {{ $art->users->name }} </a>

@@ -134,8 +134,13 @@
 	</script>
 	<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 	<script>
-		CKEDITOR.replace( 'deskripsi_playlist' );
-		CKEDITOR.replace( 'deskripsi_artikel' );
-		CKEDITOR.replace( 'deskripsi_materi' );
-		CKEDITOR.replace( 'deskripsi_slide' );
+		ClassicEditor
+		 .create(document.querySelector('#deskripsi_artikel'))
+		 .catch( error => {
+			console.error(error)
+		 });
+		// CKEDITOR.replace( 'deskripsi_playlist' );
+		// CKEDITOR.replace( 'deskripsi_artikel' );
+		// CKEDITOR.replace( 'deskripsi_materi' );
+		// CKEDITOR.replace( 'deskripsi_slide' );
 	</script>	

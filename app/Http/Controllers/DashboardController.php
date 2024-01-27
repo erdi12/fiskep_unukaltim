@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artikel;
+use App\Models\Kategori;
+use App\Models\Playlist;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,7 +17,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('back.dashboard');
+        $user = User::select('id')->get()->count();
+        $artikel = Artikel::select('id')->get()->count();
+        $kategori = Kategori::select('id')->get()->count();
+        $video = Playlist::select('id')->get()->count();
+        return view('back.dashboard', compact('user','artikel','kategori','video'));
     }
 
     /**
