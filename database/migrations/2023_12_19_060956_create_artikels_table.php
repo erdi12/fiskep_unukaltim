@@ -22,7 +22,7 @@ class CreateArtikelsTable extends Migration
             $table->integer('user_id');
             $table->string('gambar_artikel');
             $table->boolean('is_active');
-            $table->integer('views');
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
     }

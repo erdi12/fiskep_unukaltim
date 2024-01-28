@@ -21,7 +21,8 @@ class DashboardController extends Controller
         $artikel = Artikel::select('id')->get()->count();
         $kategori = Kategori::select('id')->get()->count();
         $video = Playlist::select('id')->get()->count();
-        return view('back.dashboard', compact('user','artikel','kategori','video'));
+        $popularArticle = Artikel::orderBy('views', 'desc')->first();
+        return view('back.dashboard', compact('user','artikel','kategori','video', 'popularArticle'));
     }
 
     /**

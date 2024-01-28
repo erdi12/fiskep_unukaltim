@@ -147,9 +147,12 @@
 				</div>
 				<div class="card-body">
 					<div class="table-responsive">
-					
+					{{-- @foreach ($popularArticle as $art) --}}
+						<h2>{{ $popularArticle->judul }}</h2>
+						<span class="badge text-bg-danger">Total Views: {{ $popularArticle->views }}
+						{{-- <a href="{{ route('detail-artikel', ['slug' => $article->slug]) }}">tes</a></span>				 --}}
+					{{-- @endforeach --}}
 					</div>
-
 				</div>
 			</div>
 		</div>

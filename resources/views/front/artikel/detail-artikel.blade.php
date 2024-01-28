@@ -18,6 +18,7 @@
             <div class="mt-2 p-4">
                 <span class="badge text-bg-warning">{{$article->kategori->nama_kategori}}</span>
                 <span class="badge text-bg-primary">{{$article->users->name}}</span>
+                <span class="badge text-bg-primary">Total Views: {{$article->views}}</span>
                 <h2>{{ $article->judul }}</h2>
                 <p align="justify">{!!$article->body!!}</p>
             </div>

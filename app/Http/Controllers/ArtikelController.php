@@ -91,7 +91,10 @@ class ArtikelController extends Controller
      */
     public function show($id)
     {
-        //
+        // $artikel = Artikel::findOrFail($id);
+
+        // $artikel->increment('views');
+        // return view('front.artikel.detail-artikel', compact('artikel'));
     }
 
     /**

@@ -23,6 +23,7 @@ class FrontendController extends Controller
         $slide      = Slide::all();
         $iklan      = Iklan::all();
         $article    = Artikel::where('slug', $slug)->first();
+        $article->increment('views');
 
         return view('front.artikel.detail-artikel', [
             'article' => $article,
