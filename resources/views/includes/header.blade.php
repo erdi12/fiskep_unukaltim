@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Fiskep UNU Kaltim</title>
+	<title>Panel Admin Fiskep</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="{{ asset('back/img/unu-kaltim.png') }}" type="image/x-icon"/>
 
