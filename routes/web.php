@@ -9,6 +9,7 @@ use App\Http\Controllers\IklanController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\SlideController;
+use App\Http\Controllers\VisiMisiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,10 @@ use App\Http\Controllers\SlideController;
 |
 */
 
-Route::get('/', [FrontendController::class, 'index']);
+Route::get('/', [FrontendController::class, 'index'])->name('index');
+Route::get('/home', function(){
+    return view('front.home');
+});
 Route::get('/detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
 
 Auth::routes();
@@ -36,4 +40,5 @@ Route::middleware(['web', 'auth', 'App\Http\Middleware\CheckUserActivity'])->gro
     Route::resource('materi', MateriController::class);
     Route::resource('slide', SlideController::class);
     Route::resource('iklan', IklanController::class);
+    Route::resource('visimisi', VisiMisiController::class);
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\VisiMisi;
 use Illuminate\Http\Request;
 
 class VisiMisiController extends Controller
@@ -13,7 +14,9 @@ class VisiMisiController extends Controller
      */
     public function index()
     {
-        //
+        $visimisi = VisiMisi::all();
+
+        return view('back.visimisi.index', compact('visimisi'));
     }
 
     /**
@@ -56,7 +59,9 @@ class VisiMisiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $visimisi = VisiMisi::findOrFail($id);
+
+        return view('back.visimisi.edit', compact('visimisi'));
     }
 
     /**
@@ -68,7 +73,19 @@ class VisiMisiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'visi' => 'required',
+            'misi' => 'required',
+            'tujuan' => 'required',
+        ]);
+
+        $visimisi = VisiMisi::findOrFail($id);
+        $visimisi->update([
+            'visi' => $request->visi,
+            'misi' => $request->misi,
+            'tujuan' => $request->tujuan
+        ]);
+        return redirect()->route('visimisi.index')->with(['success' => 'Data Berhasil Diupdate']);
     }
 
     /**

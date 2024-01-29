@@ -1,29 +1,40 @@
-{{-- Slider Start --}}
-<section id="slider">
-    <div class="container">
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                    @foreach ($slide as $row)            
-                    <div class="carousel-item active" style="margin-top: 4.4rem;">
-                        <img src="{{ asset('uploads/'.$row->gambar_slide) }}" class="d-block img-fluid" alt="...">
+ <!-- Carousel Start -->
+ <div class="container-fluid p-0 mb-5">
+    <div class="owl-carousel header-carousel position-relative">
+        @foreach ($slide as $row)            
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="{{ asset('uploads/'.$row->gambar_slide) }} " alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Best Online Courses</h5>
+                                <h1 class="display-3 text-white animated slideInDown">The Best Online Learning Platform</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                            </div>
+                        </div>
                     </div>
-                    {{-- <div class="carousel-item">
-                        <img src="{{ asset('back/img/blogpost.jpg') }}" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('back/img/bg-404.jpeg') }}" class="d-block w-100" alt="...">
-                    </div> --}}
-                    @endforeach
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
+        @endforeach
+        {{-- <div class="owl-carousel-item position-relative">
+            <img class="img-fluid" src="{{ asset('elearning/img/carousel-2.jpg')}} " alt="">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-sm-10 col-lg-8">
+                            <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Best Online Courses</h5>
+                            <h1 class="display-3 text-white animated slideInDown">Get Educated Online From Your Home</h1>
+                            <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                            <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
     </div>
-</section>
-{{-- Slider End --}}
+</div>
+<!-- Carousel End -->

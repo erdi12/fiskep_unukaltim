@@ -1,3 +1,4 @@
+	<script src="https://kit.fontawesome.com/a7ac2e4b44.js" crossorigin="anonymous"></script>
 	<script src="{{ asset('back/js/core/jquery.3.2.1.min.js') }}"></script>
 	<script src="{{ asset('back/js/core/popper.min.js') }}"></script>
 	<script src="{{ asset('back/js/core/bootstrap.min.js') }}"></script>
@@ -136,6 +137,21 @@
 	<script>
 		ClassicEditor
 		 .create(document.querySelector('#deskripsi_artikel'))
+		 .catch( error => {
+			console.error(error)
+		 });
+		ClassicEditor
+		 .create(document.querySelector('#visi'))
+		 .catch( error => {
+			console.error(error)
+		 });
+		ClassicEditor
+		 .create(document.querySelector('#misi'))
+		 .catch( error => {
+			console.error(error)
+		 });
+		ClassicEditor
+		 .create(document.querySelector('#tujuan'))
 		 .catch( error => {
 			console.error(error)
 		 });

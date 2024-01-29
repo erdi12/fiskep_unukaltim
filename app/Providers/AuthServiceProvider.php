@@ -36,7 +36,7 @@ class AuthServiceProvider extends ServiceProvider
             $subject = 'Reset Password untuk ' . $notifiable->email;
 
             return (new MailMessage)
-                    ->from('akademik@unukaltim.ac.id', 'Tim IT UNU Kaltim')
+                    ->from('it@unukaltim.ac.id', 'Tim IT UNU Kaltim')
                     ->subject($subject)
                     ->greeting("Assalamu'alaikum, Wr.Wb.")
                     ->line('Kami mendeteksi bahwa Anda mengalami kesulitan dalam mengklik tombol "Login". Jika itu terjadi, silahkan klik tombol "Klik Disini Untuk Merubah Password" dibawah ini:')

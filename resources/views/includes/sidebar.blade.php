@@ -50,6 +50,12 @@
                     </span>
                     <h4 class="text-section">Components</h4>
                 </li> --}}
+                <li class="nav-item {{ request()->is('visimisi*') ? 'active' : '' }}">
+                    <a href="{{ route('visimisi.index') }}">
+                        <i class="fa-solid fa-arrows-down-to-people"></i>
+                        <p>Visi Misi</p>
+                    </a>
+                </li>
                 <li class="nav-item {{ request()->is('kategori*') ? 'active' : '' }}">
                     <a href="{{ route('kategori.index') }}">
                         <i class="fas fa-desktop"></i>
