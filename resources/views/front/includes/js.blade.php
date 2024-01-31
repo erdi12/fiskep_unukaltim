@@ -13,6 +13,23 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('elearning/js/main.js')}}"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    {{-- <script>
+      $(document).ready(function () {
+          // Menambahkan event listener untuk mendeteksi scroll
+          $(window).scroll(function () {
+              // Mengambil nilai scroll dari atas halaman
+              var scroll = $(window).scrollTop();
+
+              // Menentukan aturan kapan kelas "d-none" dihilangkan
+              if (scroll > 50) {
+                  $(".navbar").removeClass("d-none");
+              } else {
+                  $(".navbar").addClass("d-none");
+              }
+          });
+      });
+  </script> --}}
+  </body>
 
 </html>

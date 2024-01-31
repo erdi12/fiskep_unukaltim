@@ -11,12 +11,11 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    public function index(Request $request) {
+    public function index() {
         $category   = Kategori::all();
         $article    = Artikel::latest('updated_at')->get();
         $slide      = Slide::all();
-        $id = 1;
-        $visimisi   = VisiMisi::where('id', $id)->first();
+        $visimisi   = VisiMisi::first();
         // $timeupload = $article->updated_at->diffForHumans();
         return view('front.home', compact('category', 'article', 'slide', 'visimisi'));
     }
@@ -34,5 +33,11 @@ class FrontendController extends Controller
             'slide' => $slide,
             'iklan' => $iklan
         ]);
+    }
+
+    public function about() {
+        $visimisi = VisiMisi::first();
+
+        return view('front.about.about', compact('visimisi'));
     }
 }

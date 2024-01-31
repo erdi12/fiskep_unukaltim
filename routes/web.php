@@ -26,6 +26,7 @@ Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/home', function(){
     return view('front.home');
 });
+Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
 
 Auth::routes();
