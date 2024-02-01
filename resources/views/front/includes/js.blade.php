@@ -14,7 +14,7 @@
     <!-- Template Javascript -->
     <script src="{{ asset('elearning/js/main.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    {{-- <script>
+    <script>
       $(document).ready(function () {
           // Menambahkan event listener untuk mendeteksi scroll
           $(window).scroll(function () {
@@ -29,7 +29,7 @@
               }
           });
       });
-  </script> --}}
+  </script>
   </body>
 
 </html>

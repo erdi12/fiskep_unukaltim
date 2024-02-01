@@ -13,11 +13,19 @@ class FrontendController extends Controller
 {
     public function index() {
         $category   = Kategori::all();
-        $article    = Artikel::latest('updated_at')->get();
+        $article    = Artikel::latest('updated_at')->paginate(3);
+        $articles   = Artikel::take(6)->get();
         $slide      = Slide::all();
         $visimisi   = VisiMisi::first();
         // $timeupload = $article->updated_at->diffForHumans();
-        return view('front.home', compact('category', 'article', 'slide', 'visimisi'));
+        return view('front.home', compact('category', 'article', 'slide', 'visimisi', 'articles'));
+    }
+
+    public function berita() {
+        $category   = Kategori::all();
+        $article    = Artikel::latest('updated_at')->paginate(3);
+
+        return view('front.artikel.berita', compact('category', 'article'));
     }
 
     public function detail($slug){
