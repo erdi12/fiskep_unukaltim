@@ -23,7 +23,7 @@ class FrontendController extends Controller
 
     public function berita() {
         $category   = Kategori::all();
-        $article    = Artikel::latest('updated_at')->paginate(3);
+        $article    = Artikel::latest('created_at')->paginate(3);
 
         return view('front.artikel.berita', compact('category', 'article'));
     }
@@ -35,7 +35,7 @@ class FrontendController extends Controller
         $article    = Artikel::where('slug', $slug)->first();
         $article->increment('views');
 
-        return view('front2.artikel.detail-artikel', [
+        return view('front.artikel.detail-artikel', [
             'article' => $article,
             'category' => $category,
             'slide' => $slide,
