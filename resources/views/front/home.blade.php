@@ -89,7 +89,7 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>{{ $art->users->name }}</small>
-                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>{{ $art->updated_at->diffForHumans() }}</small>
+                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>{{ $art->created_at->diffForHumans() }}</small>
                             </div>
                         </div>
                     </div>  

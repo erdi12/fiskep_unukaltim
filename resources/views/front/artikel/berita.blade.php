@@ -53,7 +53,6 @@
                 <a href="{{ route('index') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
                 <a href="{{ route('berita') }}" class="nav-item nav-link {{ request()->is('berita') ? 'active' : '' }}">Berita</a>
                 <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
@@ -72,8 +71,8 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
-                <h1 class="mb-5">Popular Courses</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">Berita</h6>
+                <h1 class="mb-5">Berita Fakultas Ilmu Sosial dan Kependidikan</h1>
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach ($article as $art)
@@ -87,12 +86,12 @@
                             </div>
                             <div class="text-center p-4 pb-0">
                                 <h3 class="mb-0">{{ $art->judul }}</h3>
+                                <span class="badge bg-secondary mb-3" style="border-radius: 30px;">{{ $art->kategori->nama_kategori }}</span>
                                 {{-- <h5 class="mb-4">{!! Str::limit($art->body, 100) !!}</h5> --}}
                             </div>
                             <div class="d-flex border-top">
                                 <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>{{ $art->users->name }}</small>
                                 <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>{{ $art->created_at->diffForHumans() }}</small>
-                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>{{ $art->kategori->nama_kategori }}</small>
                             </div>
                         </div>
                     </div>  
@@ -104,6 +103,34 @@
         </div>
     </div>
 {{-- @endsection --}}
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <h1>Berita Terpopuler</h1><hr>
+                @foreach ($popularArticle as $pop)
+                    <div class="course-item bg-light mb-3">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="{{ asset('uploads/'.$pop->gambar_artikel)}} " alt="">
+                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                <a href="{{ route('detail-artikel', $pop->slug) }}" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 30px">Read More</a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4 pb-0">
+                            <h3 class="mb-0">{{ $pop->judul }}</h3>
+                            <span class="badge bg-secondary mb-3" style="border-radius: 30px;">{{ $pop->kategori->nama_kategori }}</span>
+                            {{-- <h5 class="mb-4">{!! Str::limit($art->body, 100) !!}</h5> --}}
+                        </div>
+                        <div class="d-flex border-top">
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>{{ $pop->users->name }}</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>{{ $pop->created_at->diffForHumans() }}</small>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
 @include('front.includes.footer')
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

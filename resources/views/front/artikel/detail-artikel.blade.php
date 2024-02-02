@@ -83,9 +83,10 @@
             </div> --}}
             <div class="mt-2 p-4">
                 <span class="badge bg-secondary">{{$article->created_at->format('d M Y H:i:s')}}</span>
-                <span class="badge bg-warning">{{$article->kategori->nama_kategori}}</span>
+                <span class="badge bg-warning text-dark">{{$article->kategori->nama_kategori}}</span>
                 <span class="badge bg-primary">{{$article->users->name}}</span>
                 <span class="badge bg-primary">Total Views: {{$article->views}}</span>
+                <hr>
                 <h2>{{ $article->judul }}</h2>
                 <p align="justify">{!!$article->body!!}</p>
             </div>
