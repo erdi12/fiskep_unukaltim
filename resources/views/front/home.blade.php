@@ -70,8 +70,8 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
-                <h1 class="mb-5">Popular Courses</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">Berita</h6>
+                <h1 class="mb-5">Berita Saat Ini</h1>
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach ($articles as $art)
@@ -95,7 +95,7 @@
                     </div>  
                 @endforeach
                 <div class="d-flex justify-content-center">
-                    <a href="" class="btn btn-primary">Selengkapnya</a>
+                    <a href="" class="btn btn-primary wow fadeInUp" data-wow-delay="0.3s">Selengkapnya</a>
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@
     <!-- Courses End -->
 
 
-    <!-- Team Start -->
+    {{-- <!-- Team Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -186,7 +186,7 @@
             </div>
         </div>
     </div>
-    <!-- Team End -->
+    <!-- Team End --> --}}
 
 
     <!-- Testimonial Start -->
