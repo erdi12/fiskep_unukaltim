@@ -13,8 +13,14 @@ class Dekan extends Model
 
     protected $fillable = [
         'nama',
-        'foto'
+        'nidn',
+        'foto_dekan',
+        'jabatan_id'
     ];
 
     protected $hidden = [];
+
+    public function jabatan() {
+        return $this->belongsTo(Jabatan::class, 'jabatan_id', 'id');
+    }
 }

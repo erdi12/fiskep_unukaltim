@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hi;
+use App\Models\Jabatan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class HiController extends Controller
 {
@@ -13,7 +17,19 @@ class HiController extends Controller
      */
     public function index()
     {
-        //
+        // $hi = Hi::all();
+        $hi = Hi::join('jabatan', 'hi.jabatan_id', '=', 'jabatan.id')
+                    ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', 1, 0)")
+                    ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', hi.nama, '')")
+                    ->orderBy('jabatan.id')
+                    ->get();
+
+        $title = 'Hapus Data!';
+        $text = 'Apakah Anda Yakin?';
+
+        confirmDelete($title, $text);
+
+        return view('back.hi.index', compact('hi'));
     }
 
     /**
@@ -23,7 +39,10 @@ class HiController extends Controller
      */
     public function create()
     {
-        //
+        $hi = Hi::all();
+        $jabatan = Jabatan::all();
+
+        return view('back.hi.create', compact('hi', 'jabatan'));
     }
 
     /**
@@ -34,7 +53,30 @@ class HiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nidn' => 'required|min:8',
+            'nama' => 'required',
+            'jabatan_id' => 'required'
+        ]);
+
+        if ($request->hasFile('foto')) {
+            $uploadedFile = $request->file('foto');
+
+            if ($uploadedFile->getSize() > 2048 * 1024) {
+                return redirect()->back()->withInput()->withErrors([
+                'foto' => 'Ukuran file gambar terlalu besar. Maksimum 2048 KB.',
+                ]);
+            }
+        }
+
+        $data = $request->all();
+        $data['foto'] = $request->file('foto')->store('hi');
+
+        Hi::create($data);
+
+        Alert::success('Sukses!', 'Data Berhasim Tersimpan');
+
+        return redirect()->route('hi.index');
     }
 
     /**
@@ -56,7 +98,10 @@ class HiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $hi = Hi::findOrFail($id);
+        $jabatan = Jabatan::all();
+
+        return view('back.hi.edit', compact('hi', 'jabatan'));
     }
 
     /**
@@ -68,7 +113,46 @@ class HiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nidn' => 'required|min:8',
+            'nama' => 'required',
+            'jabatan_id' => 'required',
+        ]);
+
+        if (empty($request->file('foto'))) {
+            $hi = HI::find($id);
+            $hi->update([
+                'nidn' => $request->nidn,
+                'nama' => $request->nama,
+                'jabatan_id' => $request->jabatan_id
+            ]);
+
+            Alert::success('Sukses!', 'Data Berhasil Diupdate!');
+
+            return redirect()->route('hi.index');
+        } else {
+            $uploadedFile = $request->file('foto');
+
+            // Validasi ukuran gambar
+            if ($uploadedFile->getSize() > 2048 * 1024) {
+                return redirect()->back()->withInput()->withErrors([
+                    'foto' => 'Ukuran file gambar terlalu besar. Maksimum 2048 KB.',
+                ]);
+            }
+
+            $hi = Hi::find($id);
+            Storage::delete($hi->foto);
+            $hi->update([
+                'nidn' => $request->nidn,
+                'nama' => $request->nama,
+                'jabatan_id' => $request->jabatan_id,
+                'foto' => $request->file('foto')->store('hi')
+            ]);
+
+            Alert::success('Sukses!', 'Data Berhasil Diupdate!');
+
+            return redirect()->route('hi.index');
+        }
     }
 
     /**
@@ -79,6 +163,14 @@ class HiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $hi = Hi::find($id);
+
+        Storage::delete($hi->foto);
+
+        $hi->delete();
+
+        Alert::success('Data Terhapus', 'Data Berhasil Dihapus');
+
+        return redirect()->route('hi.index');
     }
 }

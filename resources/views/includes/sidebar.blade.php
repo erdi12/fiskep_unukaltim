@@ -50,12 +50,54 @@
                     </span>
                     <h4 class="text-section">Components</h4>
                 </li> --}}
-                <li class="nav-item {{ request()->is('visimisi*') ? 'active' : '' }}">
+                <li class="nav-item @yield('nav')">
+                    <a data-toggle="collapse" href="#base">
+                        <i class="flaticon-user-2"></i>
+                        <p>FISKEP</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse @yield('main')" id="base">
+                        <ul class="nav nav-collapse">
+                            <li class="@yield('visi')">
+                                <a href="{{ route('visimisi.index') }}">
+                                    
+                                    <span class="sub-item">Visi Misi</span>
+                                </a>
+                            </li>
+                            <li class="@yield('jabatan')">
+                                <a href="{{ route('jabatan.index') }}">                                    
+                                    <span class="sub-item"> Jabatan</span>
+                                </a>
+                            </li>
+                            <li class="@yield('dekan')">
+                                <a href="{{ route('dekan.index') }}">
+                                    <span class="sub-item">Dekan</span>
+                                </a>
+                            </li>
+                            <li class="@yield('hi')">
+                                <a href="{{ route('hi.index') }}">
+                                    <span class="sub-item">Hubungan Internasional</span>
+                                </a>
+                            </li>
+                            <li class="@yield('ilkom')">
+                                <a href="{{ route('ilkom.index') }}">
+                                    <span class="sub-item">Ilmu Komunikasi</span>
+                                </a>
+                            </li>
+                            <li class="@yield('pgpaud')">
+                                <a href="{{ route('pgpaud.index') }}">
+                                    <span class="sub-item">PG-PAUD</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                {{-- <li class="nav-item {{ request()->is('visimisi*') ? 'active' : '' }}">
                     <a href="{{ route('visimisi.index') }}">
                         <i class="fa-solid fa-arrows-down-to-people"></i>
                         <p>Visi Misi</p>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item {{ request()->is('kategori*') ? 'active' : '' }}">
                     <a href="{{ route('kategori.index') }}">
                         <i class="fas fa-desktop"></i>

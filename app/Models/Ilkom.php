@@ -12,9 +12,15 @@ class Ilkom extends Model
     protected $table = 'ilkom';
 
     protected $fillable = [
+        'nidn',
         'nama',
+        'jabatan_id',
         'foto'
     ];
 
     protected $hidden = [];
+
+    public function jabatan() {
+        return $this->belongsTo(Jabatan::class, 'jabatan_id', 'id');
+    }
 }

@@ -4,7 +4,7 @@
 	<script src="{{ asset('back/js/core/bootstrap.min.js') }}"></script>
 
 	<!-- jQuery UI -->
-	<script src="back/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="{{ asset('back/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
 	<script src="{{ asset('back/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}"></script>
 
 	<!-- jQuery Scrollbar -->
@@ -160,5 +160,25 @@
 		// CKEDITOR.replace( 'deskripsi_materi' );
 		// CKEDITOR.replace( 'deskripsi_slide' );
 	</script>	
+	<script>
+        $(document).ready(function() {
+            // Inisialisasi accordion
+            $("#base").accordion();
+
+            // Ketika tombol Base diklik
+            $("#base-toggle").on('click', function(event) {
+                // Menghentikan tindakan bawaan dari tautan
+                event.preventDefault();
+
+                // Mengecek apakah dropdown "Base" sedang terbuka
+                var isBaseOpen = $("#base").hasClass("ui-accordion-content-active");
+
+                // Jika dropdown "Base" tidak sedang terbuka, buka dropdown "Base"
+                if (!isBaseOpen) {
+                    $("#base").accordion("option", "active", 0);
+                }
+            });
+        });
+    </script>
 	
 	

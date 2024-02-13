@@ -15,8 +15,10 @@ class CreatePgpaudsTable extends Migration
     {
         Schema::create('pgpaud', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nidn');
             $table->string('nama');
             $table->text('foto');
+            $table->integer('jabatan_id');
             $table->timestamps();
         });
     }

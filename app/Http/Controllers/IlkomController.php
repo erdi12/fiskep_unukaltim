@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ilkom;
+use App\Models\Jabatan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class IlkomController extends Controller
 {
@@ -13,7 +17,14 @@ class IlkomController extends Controller
      */
     public function index()
     {
-        //
+        $ilkom = Ilkom::all();
+
+        $title = 'Hapus Data!';
+        $text = 'Apakah Anda Yakin?';
+
+        confirmDelete($title, $text);
+
+        return view('back.ilkom.index', compact('ilkom'));
     }
 
     /**
@@ -23,7 +34,10 @@ class IlkomController extends Controller
      */
     public function create()
     {
-        //
+        $ilkom = Ilkom::all();
+        $jabatan = Jabatan::all();
+
+        return view('back.ilkom.create', compact('ilkom', 'jabatan'));
     }
 
     /**
@@ -34,7 +48,30 @@ class IlkomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nidn' => 'required|min:8',
+            'nama' => 'required',
+            'jabatan_id' => 'required'
+        ]);
+
+        if ($request->hasFile('foto')) {
+            $uploadedFile = $request->file('foto');
+
+            if ($uploadedFile->getSize() > 2048 * 1024) {
+                return redirect()->back()->withInput()->withErrors([
+                'foto' => 'Ukuran file gambar terlalu besar. Maksimum 2048 KB.',
+                ]);
+            }
+        }
+
+        $data = $request->all();
+        $data['foto'] = $request->file('foto')->store('ilkom');
+
+        Ilkom::create($data);
+
+        Alert::success('Sukses!', 'Data Berhasim Tersimpan');
+
+        return redirect()->route('ilkom.index');
     }
 
     /**
@@ -45,7 +82,7 @@ class IlkomController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -56,7 +93,10 @@ class IlkomController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ilkom = Ilkom::findOrFail($id);
+        $jabatan = Jabatan::all();
+
+        return view('back.ilkom.edit', compact('ilkom', 'jabatan'));
     }
 
     /**
@@ -68,7 +108,46 @@ class IlkomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'nidn' => 'required|min:8',
+            'nama' => 'required',
+            'jabatan_id' => 'required',
+        ]);
+
+        if (empty($request->file('foto'))) {
+            $ilkom = Ilkom::findOrFail($id);
+            $ilkom->update([
+                'nidn' => $request->nidn,
+                'nama' => $request->nama,
+                'jabatan_id' => $request->jabatan_id
+            ]);
+
+            Alert::success('Sukses!', 'Data Berhasil Diupdate!');
+
+            return redirect()->route('ilkom.index');
+        } else {
+            $uploadedFile = $request->file('foto');
+
+            // Validasi ukuran gambar
+            if ($uploadedFile->getSize() > 2048 * 1024) {
+                return redirect()->back()->withInput()->withErrors([
+                    'foto' => 'Ukuran file gambar terlalu besar. Maksimum 2048 KB.',
+                ]);
+            }
+
+            $ilkom = Ilkom::find($id);
+            Storage::delete($ilkom->foto);
+            $ilkom->update([
+                'nidn' => $request->nidn,
+                'nama' => $request->nama,
+                'jabatan_id' => $request->jabatan_id,
+                'foto' => $request->file('foto')->store('ilkom')
+            ]);
+
+            Alert::success('Sukses!', 'Data Berhasil Diupdate!');
+
+            return redirect()->route('ilkom.index');
+        }
     }
 
     /**
@@ -79,6 +158,14 @@ class IlkomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ilkom = Ilkom::findOrFail($id);
+
+        Storage::delete($ilkom->foto);
+
+        $ilkom->delete();
+
+        Alert::success('Data Terhapus', 'Data Berhasil Dihapus');
+
+        return redirect()->route('ilkom.index');
     }
 }

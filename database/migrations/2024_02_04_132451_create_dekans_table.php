@@ -15,8 +15,10 @@ class CreateDekansTable extends Migration
     {
         Schema::create('dekan', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nidn');
             $table->string('nama');
             $table->text('foto_dekan');
+            $table->integer('jabatan_id');
             $table->timestamps();
         });
     }

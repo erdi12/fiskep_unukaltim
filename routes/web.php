@@ -4,10 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\DekanController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\HiController;
 use App\Http\Controllers\IklanController;
+use App\Http\Controllers\IlkomController;
+use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\MateriController;
+use App\Http\Controllers\PgpaudController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\VisiMisiController;
 
@@ -43,4 +48,9 @@ Route::middleware(['web', 'auth', 'App\Http\Middleware\CheckUserActivity'])->gro
     Route::resource('slide', SlideController::class);
     Route::resource('iklan', IklanController::class);
     Route::resource('visimisi', VisiMisiController::class);
+    Route::resource('jabatan', JabatanController::class);
+    Route::resource('dekan', DekanController::class);
+    Route::resource('hi', HiController::class);
+    Route::resource('ilkom', IlkomController::class);
+    Route::resource('pgpaud', PgpaudController::class);
 });

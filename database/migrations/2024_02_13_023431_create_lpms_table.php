@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHisTable extends Migration
+class CreateLpmsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateHisTable extends Migration
      */
     public function up()
     {
-        Schema::create('hi', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nidn');
-            $table->string('nama');
-            $table->text('foto');
-            $table->integer('jabatan_id');
+        Schema::create('lpms', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateHisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hi');
+        Schema::dropIfExists('lpms');
     }
 }
