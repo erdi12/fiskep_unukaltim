@@ -17,8 +17,8 @@ class HiController extends Controller
      */
     public function index()
     {
-        // $hi = Hi::all();
-        $hi = Hi::join('jabatan', 'hi.jabatan_id', '=', 'jabatan.id')
+        $hi = Hi::all();
+        $hiWithSpecificJabatan = Hi::join('jabatan', 'hi.jabatan_id', '=', 'jabatan.id')
                     ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', 1, 0)")
                     ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', hi.nama, '')")
                     ->orderBy('jabatan.id')
@@ -74,7 +74,7 @@ class HiController extends Controller
 
         Hi::create($data);
 
-        Alert::success('Sukses!', 'Data Berhasim Tersimpan');
+        Alert::success('Sukses!', 'Data Berhasil Tersimpan');
 
         return redirect()->route('hi.index');
     }
@@ -98,7 +98,7 @@ class HiController extends Controller
      */
     public function edit($id)
     {
-        $hi = Hi::findOrFail($id);
+        $hi = Hi::find($id);
         $jabatan = Jabatan::all();
 
         return view('back.hi.edit', compact('hi', 'jabatan'));

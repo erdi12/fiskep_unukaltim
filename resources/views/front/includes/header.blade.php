@@ -1,5 +1,5 @@
  <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 d-none">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="{{ route('index') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <img src="{{ asset('elearning/img/logo-fiskep-01.png') }}" class="img-fluid" width="230">
         </a>
@@ -12,11 +12,11 @@
                 <a href="{{ route('berita') }}" class="nav-item nav-link {{ request()->is('berita') ? 'active' : '' }}">Berita</a>
                 <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Program Studi</a>
+                    <a href="#" class="nav-link dropdown-toggle @yield('menu')" data-bs-toggle="dropdown">Program Studi</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Hubungan Internasional</a>
-                        <a href="testimonial.html" class="dropdown-item">Ilmu Komunikasi</a>
-                        <a href="404.html" class="dropdown-item">Pendidikan Guru - Pendidikan Anak Usia Dini</a>
+                        <a href="{{ route('hubi') }}" class="dropdown-item {{ request()->is('hubi') ? 'active' : '' }}">Hubungan Internasional</a>
+                        <a href="{{ route('mukom') }}" class="dropdown-item {{ request()->is('mukom') ? 'active' : '' }}">Ilmu Komunikasi</a>
+                        <a href="{{ route('guru') }}" class="dropdown-item {{ request()->is('guru') ? 'active' : '' }}">Pendidikan Guru - Pendidikan Anak Usia Dini</a>
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -43,7 +43,7 @@
                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                         <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
-                </div>
+                </div> 
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
             <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>

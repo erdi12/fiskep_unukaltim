@@ -48,6 +48,9 @@
                                         <td class="text-center">{{ $loop->iteration }}</td>
                                         <td>{{ $row->judul_slide }}</td>
                                         <td>{{ $row->link }}</td>
+										<td class="text-center">
+											<img src="{{ asset('uploads/'.$row->gambar_slide) }}" width="100" class="img-fluid">
+										</td>
                                         <td>
                                             @if ($row->status == '1')
                                             Publish
@@ -56,21 +59,10 @@
                                             @endif
                                         </td>
                                         <td class="text-center">
-                                            {{-- <p>gambar</p> --}}
-                                            <img src="{{ asset('uploads/'.$row->gambar_slide) }}" width="100" class="img-fluid">
-                                        </td>
-                                        <td class="text-center">
 											<a href="{{ route('slide.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
 											@csrf
 											@method('delete')
 											<a href="{{ route('slide.destroy', $row->id) }}" method="POST" class="d-inline btn btn-danger btn-sm" data-confirm-delete="true">Hapus</a>
-											{{-- <form action="{{ route('slide.destroy', $row->id) }}" method="POST" class="d-inline">
-												@csrf
-												@method('delete')
-												<button class="btn btn-danger btn-sm" data-confirm-delete="true" type="submit">
-													<i class="fa fa-times"></i>
-												</button>
-											</form> --}}
 										</td>
                                     </tr>
                                 @empty

@@ -18,6 +18,11 @@ class PgpaudController extends Controller
     public function index()
     {
         $pgpaud = Pgpaud::all();
+        $pgpaudWithSpecificJabatan = Pgpaud::join('jabatan', 'pgpaud.jabatan_id', '=', 'jabatan.id')
+                    ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', 1, 0)")
+                    ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', pgpaud.nama, '')")
+                    ->orderBy('jabatan.id')
+                    ->get();
         $jabatan = Jabatan::all();
 
         $title = 'Hapus Data!';
@@ -70,7 +75,7 @@ class PgpaudController extends Controller
 
         Pgpaud::create($data);
 
-        Alert::success('Sukses!', 'Data Berhasim Tersimpan');
+        Alert::success('Sukses!', 'Data Berhasil Tersimpan');
 
         return redirect()->route('pgpaud.index');
     }

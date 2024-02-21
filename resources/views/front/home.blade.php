@@ -1,6 +1,44 @@
     @extends('front.layouts.frontend')
     @section('content')
     @include('front.includes.slider')
+
+    <div id="myModal" class="modal fade" tabindex="-1" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="{{ asset('elearning/img/pmb.jpg') }}" class="img-fluid" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="{{ asset('elearning/img/biaya-kelas-a.jpg') }}" class="img-fluid" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="{{ asset('elearning/img/biaya-kelas-b.jpg') }}" class="img-fluid" alt="...">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -31,8 +69,11 @@
             </div>
             <div class="row g-3 justify-content-center text-center wow fadeInUp">
                 <div class="col-lg-4 col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{asset('back/img/unu-kaltim.png')}}" class="card-img-top img-fluid" alt="...">
+                    <div class="card">
+                        <div class="text-center">
+
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
+                        </div>
                         <div class="card-body">
                           <h5 class="card-title">Hubungan Internasional</h5>
                           <p class="card-text">Program Sarjana (S-1)</p>
@@ -41,8 +82,11 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{asset('back/img/unu-kaltim.png')}}" class="card-img-top img-fluid" alt="...">
+                    <div class="card">
+                        <div class="text-center">
+
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
+                        </div>
                         <div class="card-body">
                           <h5 class="card-title">Ilmu Komunikasi</h5>
                           <p class="card-text">Program Sarjana (S-1)</p>
@@ -51,10 +95,13 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{asset('back/img/unu-kaltim.png')}}" class="card-img-top img-fluid" alt="...">
+                    <div class="card">
+                        <div class="text-center">
+
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
+                        </div>
                         <div class="card-body">
-                          <h5 class="card-title">Pendidikan Guru - Pendidikan Anak Usia Dini</h5>
+                          <h6 class="card-title">Pendidikan Guru - Pendidikan Anak Usia Dini</h6>
                           <p class="card-text">Program Sarjana (S-1)</p>
                           <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>

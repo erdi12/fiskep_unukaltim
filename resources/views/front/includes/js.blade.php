@@ -13,7 +13,7 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('elearning/js/main.js')}}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
       $(document).ready(function () {
           // Menambahkan event listener untuk mendeteksi scroll
@@ -29,6 +29,17 @@
               }
           });
       });
+  </script> --}}
+  <script>
+    // var myModal = document.getElementById('myModal')
+    // var myInput = document.getElementById('myInput')
+
+    // myModal.addEventListener('shown.bs.modal', function () {
+    // myInput.focus()
+    // })
+    $(document).ready(function() {
+    $("#myModal").modal("show");
+});
   </script>
   </body>
 
