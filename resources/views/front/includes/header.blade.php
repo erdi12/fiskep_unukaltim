@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{ route('index') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
-                <a href="{{ route('berita') }}" class="nav-item nav-link {{ request()->is('berita') ? 'active' : '' }}">Berita</a>
+                <a href="{{ route('berita') }}" class="nav-item nav-link @yield('berita')">Berita</a>
                 <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle @yield('menu')" data-bs-toggle="dropdown">Program Studi</a>
@@ -19,7 +19,7 @@
                         <a href="{{ route('guru') }}" class="dropdown-item {{ request()->is('guru') ? 'active' : '' }}">Pendidikan Guru - Pendidikan Anak Usia Dini</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
             </div>
             <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>

@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center mb-4">
+            {{-- <div class="row justify-content-center mb-4">
                 @foreach ($hubi3 as $item)    
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item bg-light">
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
+            </div> --}}
             <div class="row justify-content-center g-4">                
                 @foreach ($hubi as $row)                    
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">

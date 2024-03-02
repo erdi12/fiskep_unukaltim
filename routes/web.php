@@ -37,6 +37,8 @@ Route::get('/home', function(){
 });
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/berita', [FrontendController::class, 'berita'])->name('berita');
+Route::get('/kategori/{kategoriSlug}', [FrontendController::class, 'kategori_berita'])->name('kategori-berita');
+Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 // Route::get('/hi', [FrontendController::class, 'hi'])->name('hi');
 Route::get('/detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
 Route::get('/his', [FrontendController::class, 'hubi'])->name('hubi');

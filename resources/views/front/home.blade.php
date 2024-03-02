@@ -12,15 +12,11 @@
                 <div class="modal-body">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="{{ asset('elearning/img/pmb.jpg') }}" class="img-fluid" alt="...">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="{{ asset('elearning/img/biaya-kelas-a.jpg') }}" class="img-fluid" alt="...">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="{{ asset('elearning/img/biaya-kelas-b.jpg') }}" class="img-fluid" alt="...">
-                          </div>
+                            @foreach ($iklan as $key => $row)
+                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                    <img src="{{ asset('uploads/'.$row->gambar_iklan) }}" class="img-fluid" alt="...">
+                                </div>
+                            @endforeach
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -30,7 +26,7 @@
                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
                           <span class="visually-hidden">Next</span>
                         </button>
-                      </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -77,7 +73,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Hubungan Internasional</h5>
                           <p class="card-text">Program Sarjana (S-1)</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                          <a href="{{ route('hubi') }}" class="btn btn-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +86,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Ilmu Komunikasi</h5>
                           <p class="card-text">Program Sarjana (S-1)</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                          <a href="{{ route('mukom') }}" class="btn btn-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +99,7 @@
                         <div class="card-body">
                           <h6 class="card-title">Pendidikan Guru - Pendidikan Anak Usia Dini</h6>
                           <p class="card-text">Program Sarjana (S-1)</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                          <a href="{{ route('guru') }}" class="btn btn-primary">lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -142,7 +138,7 @@
                     </div>  
                 @endforeach
                 <div class="d-flex justify-content-center">
-                    <a href="" class="btn btn-primary wow fadeInUp" data-wow-delay="0.3s">Selengkapnya</a>
+                    <a href="{{ route('berita') }}" class="btn btn-primary wow fadeInUp" data-wow-delay="0.3s">Selengkapnya</a>
                 </div>
             </div>
         </div>
