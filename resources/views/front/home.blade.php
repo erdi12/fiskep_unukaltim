@@ -29,10 +29,12 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Program Studi</h6>
                 <h1 class="mb-5">Program Studi Unggulan</h1>
             </div>
-            <div class="row g-3 justify-content-center text-center wow fadeInUp">
+            <div class="row justify-content-center text-center wow fadeInUp">
                 <div class="col-lg-4 col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{asset('back/img/unu-kaltim.png')}}" class="card-img-top img-fluid" alt="...">
+                    <div class="card">
+                        <div class="text-center">
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 60%" class="card-img-top img-fluid" alt="...">
+                        </div>
                         <div class="card-body">
                           <h5 class="card-title">Hubungan Internasional</h5>
                           <p class="card-text">Program Sarjana (S-1)</p>
@@ -41,8 +43,10 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{asset('back/img/unu-kaltim.png')}}" class="card-img-top img-fluid" alt="...">
+                    <div class="card">
+                        <div class="text-center">
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 60%" class="card-img-top img-fluid" alt="...">
+                        </div>
                         <div class="card-body">
                           <h5 class="card-title">Ilmu Komunikasi</h5>
                           <p class="card-text">Program Sarjana (S-1)</p>
@@ -51,10 +55,12 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{asset('back/img/unu-kaltim.png')}}" class="card-img-top img-fluid" alt="...">
+                    <div class="card">
+                        <div class="text-center">
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 60%" class="card-img-top img-fluid" alt="...">
+                        </div>
                         <div class="card-body">
-                          <h5 class="card-title">Pendidikan Guru - Pendidikan Anak Usia Dini</h5>
+                          <h6 class="card-title">Pendidikan Guru - Pendidikan Anak Usia Dini</h6>
                           <p class="card-text">Program Sarjana (S-1)</p>
                           <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
