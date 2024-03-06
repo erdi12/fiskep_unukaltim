@@ -14,8 +14,10 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                            <h5 class="mb-3">Skilled Instructors</h5>
-                            <p>{!! $visimisi->visi !!}</p>
+                            <h5 class="mb-3">Visi</h5>
+                            <div class="text-start">
+                                <p>{!! $visimisi->visi !!}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -23,8 +25,10 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5 class="mb-3">Online Classes</h5>
-                            <p>{!! $visimisi->misi !!}</p>
+                            <h5 class="mb-3">Misi</h5>
+                            <div class="text-start">
+                                <p>{!! $visimisi->misi !!}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -32,8 +36,10 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa-solid fa-3x fa-arrows-down-to-people text-primary mb-4"></i>
-                            <h5 class="mb-3">Home Projects</h5>
-                            <p>{!! $visimisi->tujuan !!}</p>
+                            <h5 class="mb-3">Tujuan</h5>
+                            <div class="text-start">
+                                <p>{!! $visimisi->tujuan !!}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

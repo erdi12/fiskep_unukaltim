@@ -18,7 +18,7 @@ class CheckUserActivity
     public function handle(Request $request, Closure $next)
     {
          // Periksa apakah pengguna sudah login
-         if (Auth::check()) {
+        if (Auth::check()) {
             // Periksa waktu aktivitas terakhir pengguna
             $lastActivity = Auth::user()->last_activity;
 

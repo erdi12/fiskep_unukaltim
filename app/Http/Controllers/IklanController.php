@@ -33,7 +33,9 @@ class IklanController extends Controller
      */
     public function create()
     {
-        //
+        $iklan = Iklan::all();
+
+        return view('back.iklan.create', compact('iklan'));
     }
 
     /**
@@ -44,7 +46,28 @@ class IklanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'judul' => 'required|min::4',
+        ]);
+
+        if ($request->hasFile('gambar_iklan')) {
+            $uploadedFile = $request->file('gambar_iklan');
+
+            if ($uploadedFile->getSize() > 2048*1048) {
+                return redirect()->back()->withInput()->withErrors([
+                    'gambar_iklan' => 'Ukuram file gambar terlalu besar. Maksimum 2048 Kb.',
+                ]);
+            }
+        }
+
+        $data = $request->all();
+        $data['gambar_iklan'] = $request->file('gambar_iklan')->store('iklan');
+
+        Iklan::create($data);
+
+        Alert::success('Sukses!', 'Data Berhasil Tersimpan');
+
+        return redirect()->route('iklan.index');
     }
 
     /**

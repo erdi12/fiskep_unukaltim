@@ -34,7 +34,7 @@
 						</div>
 					@endif
 					<div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table id="basic-datatables" class="display table table-bordered table-hover">
                             <thead class="text-center">
                                 <tr>
                                     <th>ID</th>
@@ -56,7 +56,7 @@
                                             {{-- <p>gambar</p> --}}
                                             <img src="{{ asset('uploads/'.$row->foto) }}" width="100" class="img-fluid">
                                         </td>
-                                        <td class="text-center">
+                                        <td class="text-center" {{ route('hi.edit', $row->id) }}>
 											<a href="{{ route('hi.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
 											@csrf
 											@method('delete')

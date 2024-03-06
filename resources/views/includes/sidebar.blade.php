@@ -44,12 +44,14 @@
                     </a>
                 </li>
                 <hr>
-                {{-- <li class="nav-section">
+
+                {{-- Sidebar Dosen Start --}}
+                <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
                     </span>
-                    <h4 class="text-section">Components</h4>
-                </li> --}}
+                    <h4 class="text-section">Fakultas</h4>
+                </li>
                 <li class="nav-item @yield('nav')">
                     <a data-toggle="collapse" href="#base">
                         <i class="flaticon-user-2"></i>
@@ -58,12 +60,6 @@
                     </a>
                     <div class="collapse @yield('main')" id="base">
                         <ul class="nav nav-collapse">
-                            <li class="@yield('visi')">
-                                <a href="{{ route('visimisi.index') }}">
-                                    
-                                    <span class="sub-item">Visi Misi</span>
-                                </a>
-                            </li>
                             <li class="@yield('jabatan')">
                                 <a href="{{ route('jabatan.index') }}">                                    
                                     <span class="sub-item"> Jabatan</span>
@@ -92,6 +88,48 @@
                         </ul>
                     </div>
                 </li>
+                {{--Sidebar Dosen End  --}}
+
+                {{-- Sidebar Visi Misi Start --}}
+                {{-- <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">Visi Misi</h4>
+                </li> --}}
+                <li class="nav-item @yield('visimisi')">
+                    <a data-toggle="collapse" href="#visimisi">
+                        <i class="fas fa-address-book"></i>
+                        <p>Visi Misi</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse @yield('menu')" id="visimisi">
+                        <ul class="nav nav-collapse">
+                            <li class="@yield('visi')">
+                                <a href="{{ route('visimisi.index') }}">
+                                    
+                                    <span class="sub-item"> Visi Misi Fakultas</span>
+                                </a>
+                            </li>
+                            <li class="@yield('visimisihi')">
+                                <a href="{{ route('visimisihi.index') }}">                                    
+                                    <span class="sub-item"> Visi Misi HI</span>
+                                </a>
+                            </li>
+                            <li class="@yield('visimisiilkom')">
+                                <a href="{{ route('visimisiilkom.index') }}">
+                                    <span class="sub-item"> Visi Misi Ilkom</span>
+                                </a>
+                            </li>
+                            <li class="@yield('visimisipgpaud')">
+                                <a href="{{ route('visimisipgpaud.index') }}">
+                                    <span class="sub-item"> Visi Misi PG-PAUD</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                {{-- Sidebar Visi Misi End --}}
                 {{-- <li class="nav-item {{ request()->is('visimisi*') ? 'active' : '' }}">
                     <a href="{{ route('visimisi.index') }}">
                         <i class="fa-solid fa-arrows-down-to-people"></i>

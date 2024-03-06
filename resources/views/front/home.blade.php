@@ -1,6 +1,40 @@
     @extends('front.layouts.frontend')
     @section('content')
     @include('front.includes.slider')
+
+    <div id="myModal" class="modal fade" tabindex="-1" data-backdrop="static">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach ($iklan as $key => $row)
+                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                    <img src="{{ asset('uploads/'.$row->gambar_iklan) }}" class="img-fluid" alt="...">
+                                </div>
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -33,36 +67,51 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card">
                         <div class="text-center">
+<<<<<<< HEAD
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 60%" class="card-img-top img-fluid" alt="...">
+=======
+
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
+>>>>>>> 2f220d3cb51021952a49659ca1a0405046b8ccdb
                         </div>
                         <div class="card-body">
                           <h5 class="card-title">Hubungan Internasional</h5>
                           <p class="card-text">Program Sarjana (S-1)</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                          <a href="{{ route('hubi') }}" class="btn btn-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="card">
                         <div class="text-center">
+<<<<<<< HEAD
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 60%" class="card-img-top img-fluid" alt="...">
+=======
+
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
+>>>>>>> 2f220d3cb51021952a49659ca1a0405046b8ccdb
                         </div>
                         <div class="card-body">
                           <h5 class="card-title">Ilmu Komunikasi</h5>
                           <p class="card-text">Program Sarjana (S-1)</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                          <a href="{{ route('mukom') }}" class="btn btn-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="card">
                         <div class="text-center">
+<<<<<<< HEAD
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 60%" class="card-img-top img-fluid" alt="...">
+=======
+
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
+>>>>>>> 2f220d3cb51021952a49659ca1a0405046b8ccdb
                         </div>
                         <div class="card-body">
                           <h6 class="card-title">Pendidikan Guru - Pendidikan Anak Usia Dini</h6>
                           <p class="card-text">Program Sarjana (S-1)</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                          <a href="{{ route('guru') }}" class="btn btn-primary">lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -101,7 +150,7 @@
                     </div>  
                 @endforeach
                 <div class="d-flex justify-content-center">
-                    <a href="" class="btn btn-primary wow fadeInUp" data-wow-delay="0.3s">Selengkapnya</a>
+                    <a href="{{ route('berita') }}" class="btn btn-primary wow fadeInUp" data-wow-delay="0.3s">Selengkapnya</a>
                 </div>
             </div>
         </div>

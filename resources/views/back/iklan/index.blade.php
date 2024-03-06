@@ -19,10 +19,10 @@
 		<div class="col-md-12">
 			<div class="card full-height">
 				<div class="card-header">
-					{{-- <div class="card-head-row">
+					<div class="card-head-row">
 						<div class="card-title">Data iklan Video</div>
                         <a href="{{ route('iklan.create') }}" class="btn btn-primary btn-sm ml-auto">Tambah iklan Video <i class="fa fa-plus-circle"></i></a>
-					</div> --}}
+					</div>
 				</div>
 				<div class="card-body">
 					@if (Session::has('success'))

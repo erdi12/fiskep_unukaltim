@@ -19,6 +19,12 @@ class IlkomController extends Controller
     {
         $ilkom = Ilkom::all();
 
+        $hi = Ilkom::join('jabatan', 'ilkom.jabatan_id', '=', 'jabatan.id')
+                    ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', 1, 0)")
+                    ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', ilkom.nama, '')")
+                    ->orderBy('jabatan.id')
+                    ->get();
+
         $title = 'Hapus Data!';
         $text = 'Apakah Anda Yakin?';
 
@@ -69,7 +75,7 @@ class IlkomController extends Controller
 
         Ilkom::create($data);
 
-        Alert::success('Sukses!', 'Data Berhasim Tersimpan');
+        Alert::success('Sukses!', 'Data Berhasil Tersimpan');
 
         return redirect()->route('ilkom.index');
     }

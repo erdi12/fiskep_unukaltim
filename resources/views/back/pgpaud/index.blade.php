@@ -34,7 +34,7 @@
 						</div>
 					@endif
 					<div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table id="basic-datatables" class="display table table-bordered table-hover">
                             <thead class="text-center">
                                 <tr>
                                     <th>ID</th>

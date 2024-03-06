@@ -28,6 +28,7 @@
 	<link rel="stylesheet" href="{{ asset('back/css/demo.css') }}">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	{{-- <link rel="sylesheet" src="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.min.css"></link> --}}
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
