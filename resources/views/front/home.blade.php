@@ -63,12 +63,16 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Program Studi</h6>
                 <h1 class="mb-5">Program Studi Unggulan</h1>
             </div>
-            <div class="row g-3 justify-content-center text-center wow fadeInUp">
+            <div class="row justify-content-center text-center wow fadeInUp">
                 <div class="col-lg-4 col-md-6">
                     <div class="card">
                         <div class="text-center">
+<<<<<<< HEAD
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 60%" class="card-img-top img-fluid" alt="...">
+=======
 
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
+>>>>>>> 2f220d3cb51021952a49659ca1a0405046b8ccdb
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Hubungan Internasional</h5>
@@ -80,8 +84,12 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card">
                         <div class="text-center">
+<<<<<<< HEAD
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 60%" class="card-img-top img-fluid" alt="...">
+=======
 
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
+>>>>>>> 2f220d3cb51021952a49659ca1a0405046b8ccdb
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Ilmu Komunikasi</h5>
@@ -93,8 +101,12 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card">
                         <div class="text-center">
+<<<<<<< HEAD
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 60%" class="card-img-top img-fluid" alt="...">
+=======
 
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
+>>>>>>> 2f220d3cb51021952a49659ca1a0405046b8ccdb
                         </div>
                         <div class="card-body">
                             <h6 class="card-title">Pendidikan Guru - Pendidikan Anak Usia Dini</h6>
