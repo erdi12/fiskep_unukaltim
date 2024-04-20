@@ -1,24 +1,28 @@
 <?php
 
+use App\Models\VisiMisiHi;
+use App\Http\Middleware\CheckRole;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\ArtikelController;
-use App\Http\Controllers\DekanController;
-use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HiController;
+use App\Http\Controllers\LpmController;
+use App\Http\Controllers\DekanController;
 use App\Http\Controllers\IklanController;
 use App\Http\Controllers\IlkomController;
-use App\Http\Controllers\JabatanController;
-use App\Http\Controllers\PlaylistController;
+use App\Http\Controllers\SlideController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\PgpaudController;
-use App\Http\Controllers\SlideController;
+use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\VisiMisiController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\VisiMisiHiController;
 use App\Http\Controllers\VisiMisiIlkomController;
+use App\Http\Controllers\TambahKategoriController;
 use App\Http\Controllers\VisiMisiPgpaudController;
-use App\Models\VisiMisiHi;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,10 +48,9 @@ Route::get('/detail-artikel/{slug}', [FrontendController::class, 'detail'])->nam
 Route::get('/his', [FrontendController::class, 'hubi'])->name('hubi');
 Route::get('/ilkoms', [FrontendController::class, 'mukom'])->name('mukom');
 Route::get('/pgpauds', [FrontendController::class, 'guru'])->name('guru');
+Route::get('/penjaminan-mutu', [FrontendController::class, 'penjaminan'])->name('penjaminan-mutu');
 
 Auth::routes();
-
-
 
 Route::middleware(['web', 'auth', 'App\Http\Middleware\CheckUserActivity'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -66,4 +69,6 @@ Route::middleware(['web', 'auth', 'App\Http\Middleware\CheckUserActivity'])->gro
     Route::resource('hi', HiController::class);
     Route::resource('ilkom', IlkomController::class);
     Route::resource('pgpaud', PgpaudController::class);
+    Route::resource('lpm', LpmController::class);
+    Route::get('/tambah-kategori', [TambahKategoriController::class, 'create'])->name('tambah-kategori');
 });

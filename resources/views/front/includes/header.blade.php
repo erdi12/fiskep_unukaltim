@@ -19,6 +19,13 @@
                         <a href="{{ route('guru') }}" class="dropdown-item {{ request()->is('guru') ? 'active' : '' }}">Pendidikan Guru - Pendidikan Anak Usia Dini</a>
                     </div>
                 </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle @yield('lembaga')" data-bs-target="dropdown">Lembaga</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="{{ route('penjaminan-mutu') }}" class="dropdown-item @yield('lpm')">LPM</a>
+                        <a href="" class="dropdown-item">LPPM</a>
+                    </div>
+                </div>
                 <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
             </div>
             <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>

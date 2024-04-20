@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -36,5 +38,16 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->hasRole('lpm')) {
+            return redirect()->route('lpm.index'); // Ganti 'lpm.index' dengan nama rute yang sesuai
+        } elseif ($user->hasRole('admin')) {
+            return redirect()->route('dashboard'); // Ganti 'admin.dashboard' dengan nama rute dashboard admin
+        } elseif ($user->hasRole('super_admin')) {
+            return redirect()->route('dashboard'); // Ganti 'super_admin.dashboard' dengan nama rute dashboard super admin
+        }
     }
 }

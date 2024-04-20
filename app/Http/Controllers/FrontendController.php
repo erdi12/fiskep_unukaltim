@@ -8,7 +8,9 @@ use App\Models\Ilkom;
 use App\Models\Slide;
 use App\Models\Pgpaud;
 use App\Models\Artikel;
+use App\Models\Dekan;
 use App\Models\Kategori;
+use App\Models\Lpm;
 use App\Models\VisiMisi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -67,8 +69,10 @@ class FrontendController extends Controller
 
     public function about() {
         $visimisi = VisiMisi::first();
+        $dekan = Dekan::first();
+        $tendik = Dekan::skip(1)->take(1)->first();
 
-        return view('front.about.about', compact('visimisi'));
+        return view('front.about.about', compact('visimisi', 'dekan', 'tendik'));
     }
 
     public function hubi() {
@@ -100,6 +104,11 @@ class FrontendController extends Controller
 
     public function contact() {
         return view('front.contact.contact');
+    }
+
+    public function penjaminan() {
+        $lpm = Lpm::all();
+        return view('front.lpm.lpm', compact('lpm'));
     }
 
 }

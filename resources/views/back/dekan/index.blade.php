@@ -8,7 +8,7 @@
 	<div class="page-inner py-5">
 		<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 			<div>
-				<h2 class="text-white pb-2 fw-bold">dekan Video</h2>
+				<h2 class="text-white pb-2 fw-bold">dekan</h2>
 			</div>
 			<div class="ml-md-auto py-2 py-md-0">
 				{{-- <a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>
@@ -23,8 +23,8 @@
 			<div class="card full-height">
 				<div class="card-header">
 					<div class="card-head-row">
-						<div class="card-title">Data dekan Video</div>
-                        <a href="{{ route('dekan.create') }}" class="btn btn-primary btn-sm ml-auto">Tambah dekan Video <i class="fa fa-plus-circle"></i></a>
+						<div class="card-title">Data dekan</div>
+                        <a href="{{ route('dekan.create') }}" class="btn btn-primary btn-sm ml-auto">Tambah dekan <i class="fa fa-plus-circle"></i></a>
 					</div>
 				</div>
 				<div class="card-body">

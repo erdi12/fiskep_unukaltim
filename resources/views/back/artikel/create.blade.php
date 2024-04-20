@@ -59,13 +59,13 @@
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="status">Status</label>
                             <select name="is_active" class="form-control">
                                 <option value="1">Publish</option>
                                 <option value="0">Draft</option>
                             </select>
-                        </div>
+                        </div> --}}
 						<div class="form-group">
 							<button class="btn btn-primary btn-sm" type="submit">Simpan Data</button>
 							<button class="btn btn-danger btn-sm" type="reset">Reset Data</button>

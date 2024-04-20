@@ -13,8 +13,11 @@ class CreateLpmsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lpms', function (Blueprint $table) {
+        Schema::create('lpm', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('slug');
+            $table->string('link');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateLpmsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lpms');
+        Schema::dropIfExists('lpm');
     }
 }

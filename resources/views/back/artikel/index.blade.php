@@ -31,7 +31,7 @@
 						</div>
 					@endif
 					<div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table id="basic-datatables" class="display table table-bordered table-hover">
                             <thead class="text-center">
                                 <tr>
                                     <th>ID</th>
@@ -39,6 +39,7 @@
                                     <th>Slug</th>
                                     <th>Kategori</th>
                                     <th>Author</th>
+                                    <th>Waktu</th>
                                     <th>Gambar</th>
                                     <th>Action</th>
                                 </tr>
@@ -51,6 +52,7 @@
                                         <td>{{ $row->slug }}</td>
                                         <td>{{ $row->kategori->nama_kategori }}</td>
                                         <td>{{ $row->users->name }}</td>
+                                        <td>{{ $row->created_at->diffForHumans() }}</td>
 										<td class="text-center"><img src="{{ asset('uploads/'.$row->gambar_artikel) }}" width="100" class="img-fluid"></td>
                                         <td class="text-center">
 											<a href="{{ route('artikel.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>

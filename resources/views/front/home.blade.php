@@ -19,12 +19,12 @@
                             @endforeach
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
@@ -71,9 +71,9 @@
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
                         </div>
                         <div class="card-body">
-                          <h5 class="card-title">Hubungan Internasional</h5>
-                          <p class="card-text">Program Sarjana (S-1)</p>
-                          <a href="{{ route('hubi') }}" class="btn btn-primary">Lihat Selengkapnya</a>
+                            <h5 class="card-title">Hubungan Internasional</h5>
+                            <p class="card-text">Program Sarjana (S-1)</p>
+                            <a href="{{ route('hubi') }}" class="btn btn-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -84,9 +84,9 @@
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
                         </div>
                         <div class="card-body">
-                          <h5 class="card-title">Ilmu Komunikasi</h5>
-                          <p class="card-text">Program Sarjana (S-1)</p>
-                          <a href="{{ route('mukom') }}" class="btn btn-primary">Lihat Selengkapnya</a>
+                            <h5 class="card-title">Ilmu Komunikasi</h5>
+                            <p class="card-text">Program Sarjana (S-1)</p>
+                            <a href="{{ route('mukom') }}" class="btn btn-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -97,9 +97,9 @@
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
                         </div>
                         <div class="card-body">
-                          <h6 class="card-title">Pendidikan Guru - Pendidikan Anak Usia Dini</h6>
-                          <p class="card-text">Program Sarjana (S-1)</p>
-                          <a href="{{ route('guru') }}" class="btn btn-primary">lihat Selengkapnya</a>
+                            <h6 class="card-title">Pendidikan Guru - Pendidikan Anak Usia Dini</h6>
+                            <p class="card-text">Program Sarjana (S-1)</p>
+                            <a href="{{ route('guru') }}" class="btn btn-primary">lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -233,7 +233,7 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    {{-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
                 <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
@@ -274,6 +274,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Testimonial End -->
     @endsection

@@ -129,7 +129,6 @@ class SlideController extends Controller
             $slide->update([
                 'judul_slide' => $request->judul_slide,
                 'link' => $request->link,
-                'status' => $request->status,
             ]);
 
             Alert::success('Sukses!', 'Data Berhasil Diupdate!');
@@ -150,9 +149,11 @@ class SlideController extends Controller
             $slide->update([
                 'judul_slide' => $request->judul_slide,
                 'link' => $request->link,
-                'status' => $request->status,
                 'gambar_slide' => $request->file('gambar_slide')->store('slide')
             ]);
+
+            Alert::success('Sukses!', 'Data Berhasil Diupdate!');
+            
             return redirect()->route('slide.index')->with(['success' => 'Data Berhasil Diupdate']);
         }
     }

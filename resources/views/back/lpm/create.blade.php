@@ -5,7 +5,7 @@
 	<div class="page-inner py-5">
 		<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 			<div>
-				<h2 class="text-white pb-2 fw-bold">kategori</h2>
+				<h2 class="text-white pb-2 fw-bold">lpm</h2>
 			</div>
 			<div class="ml-md-auto py-2 py-md-0">
 				{{-- <a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>
@@ -20,16 +20,20 @@
 			<div class="card full-height">
 				<div class="card-header">
 					<div class="card-head-row">
-						<div class="card-title">Data kategori</div>
-                        <a href="{{ route('kategori.index') }}" class="btn btn-warning btn-sm ml-auto"><i class="fa fa-arrow-left"></i> Back</a>
+						<div class="card-title">Data lpm</div>
+                        <a href="{{ route('lpm.index') }}" class="btn btn-warning btn-sm ml-auto"><i class="fa fa-arrow-left"></i> Back</a>
 					</div>
 				</div>
 				<div class="card-body">
-					<form method="POST" action="{{ route('kategori.store') }}">
+					<form method="POST" action="{{ route('lpm.store') }}">
 						@csrf
 						<div class="form-group">
-							<label for="nama_kategori">Nama Kategori</label>
-							<input type="text" name="nama_kategori" class="form-control" id="text" placeholder="Masukkan Nama Kategori">
+							<label for="nama">Nama Link</label>
+							<input type="text" name="nama" class="form-control" id="text" placeholder="Masukkan Nama Link">
+						</div>
+						<div class="form-group">
+							<label for="link">link</label>
+							<input type="text" name="link" class="form-control" id="text" placeholder="Masukkan Link">
 						</div>
 						<div class="form-group">
 							<button class="btn btn-primary btn-sm" type="submit">Simpan Data</button>
