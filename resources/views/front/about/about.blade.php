@@ -46,13 +46,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div><hr>
                     <div class="row justify-content-center mb-4">
+                        @foreach ($hi as $item)
                         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <h1>Hubungan Iternasional</h1>
+                            <h1>Hubungan Internasional</h1>
                             <div class="team-item bg-light">
                                 <div class="overflow-hidden">
-                                    <img class="img-fluid" src="{{ asset('uploads/'.$tendik->foto_dekan) }}" alt="">
+                                    <img class="img-fluid" src="{{ asset('uploads/'.$item->foto) }}" alt="">
                                 </div>
                                 <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                                     <div class="bg-light d-flex justify-content-center pt-2 px-1">
@@ -62,11 +63,14 @@
                                     </div>
                                 </div>
                                 <div class="text-center p-4">
-                                    <h5 class="mb-0"> {{ $tendik->nama}} </h5>
-                                    <small> {{ $tendik->jabatan->nama_jabatan }} </small>
+                                    <h5 class="mb-0"> {{ $item->nama}} </h5>
+                                    <small> {{ $item->jabatan->nama_jabatan }} </small>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
+                    </div><hr>
+                    <div class="row justify-content-center mb-4">
                         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <h1>Ilmu Komunikasi</h1>
                             <div class="team-item bg-light">
@@ -86,6 +90,8 @@
                                 </div>
                             </div>
                         </div>
+                    </div><hr>
+                    <div class="row justify-content-center mb-4">
                         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <h1>Pendidikan Anak Usia Dini</h1>
                             <div class="team-item bg-light">

@@ -68,11 +68,21 @@ class FrontendController extends Controller
     }
 
     public function about() {
+        $jabatan = [3, 4];
         $visimisi = VisiMisi::first();
         $dekan = Dekan::first();
         $tendik = Dekan::skip(1)->take(1)->first();
+        $positions = ['Ketua Program Studi', 'Sekretaris Program Studi', 'Laboran'];
 
-        return view('front.about.about', compact('visimisi', 'dekan', 'tendik'));
+        $hi = Hi::join('jabatan', 'hi.jabatan_id', '=', 'jabatan.id')
+            ->whereIn('jabatan.nama_jabatan', $positions)
+            ->orderByRaw("FIELD(jabatan.nama_jabatan, '" . implode("','", $positions) . "')")
+            ->orderBy('jabatan.id')
+            ->get();
+
+
+
+        return view('front.about.about', compact('visimisi', 'dekan', 'tendik', 'hi'));
     }
 
     public function hubi() {
