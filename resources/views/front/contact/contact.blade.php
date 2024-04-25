@@ -58,6 +58,11 @@
                 <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                     <form method="POST" action="{{ route('email') }}">
                         @csrf
+                        @if (Session::has('success'))
+						<div class="alert alert-primary">
+							{{ Session('success') }}
+						</div>
+					    @endif
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">

@@ -18,6 +18,7 @@ use Faker\Provider\ar_EG\Address;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class FrontendController extends Controller
 {
@@ -170,8 +171,9 @@ class FrontendController extends Controller
         // from: new Address($email->email, $email->nama);
         // Kirim email
         Mail::to('it@unukaltim.ac.id')->send(new SendEmail($email->nama, $email->email, $email->subject, $email->pesan));
-
-        return response()->json(['message' => 'Email berhasil dikirim']);
+        // Alert::success('Sukses!', 'Data Berhasil Terkirim');
+        return redirect()->route('contact')->with(['success' => 'Sukses']);
+        // return response()->json(['message' => 'Email berhasil dikirim']);
     }
 
 }
