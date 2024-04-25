@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HiController;
 use App\Http\Controllers\LpmController;
 use App\Http\Controllers\DekanController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\IklanController;
 use App\Http\Controllers\IlkomController;
 use App\Http\Controllers\SlideController;
@@ -49,6 +50,7 @@ Route::get('/his', [FrontendController::class, 'hubi'])->name('hubi');
 Route::get('/ilkoms', [FrontendController::class, 'mukom'])->name('mukom');
 Route::get('/pgpauds', [FrontendController::class, 'guru'])->name('guru');
 Route::get('/penjaminan-mutu', [FrontendController::class, 'penjaminan'])->name('penjaminan-mutu');
+Route::post('/email', [FrontendController::class, 'email'])->name('email');
 
 Auth::routes();
 

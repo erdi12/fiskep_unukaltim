@@ -40,23 +40,12 @@
 							<label for="judul">Nama Judul</label>
 							<input type="text" name="judul" class="form-control" id="judul" placeholder="Masukkan Judul" value="{{ old('judul') }}">
 						</div>
-						<div class="form-group">
-							<label for="link">Link Video iklan</label>
-							<input type="text" name="link" class="form-control" id="link" placeholder="Masukkan Link Video" value="{{ old('link') }}">
-						</div>
                         <div class="form-group">
                             <label for="gambar">Gambar iklan</label>
                             <input type="file" name="gambar_iklan" class="form-control" accept="image/png, image/gif, image/jpeg, image/jpg">
 							@error('gambar_iklan')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="status">Status</label>
-                            <select name="status" class="form-control">
-                                <option value="1">Publish</option>
-                                <option value="0">Draft</option>
-                            </select>
                         </div>
 						<div class="form-group">
 							<button class="btn btn-primary btn-sm" type="submit">Simpan Data</button>

@@ -36,9 +36,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Judul iklan</th>
-                                    <th>link</th>
                                     <th>Gambar</th>
-                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -47,27 +45,12 @@
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
                                         <td>{{ $row->judul }}</td>
-                                        <td>{{ $row->link }}</td>
                                         <td class="text-center">
                                             {{-- <p>gambar</p> --}}
                                             <img src="{{ asset('uploads/'.$row->gambar_iklan) }}" width="100" class="img-fluid">
                                         </td>
-                                        <td>
-                                            @if ($row->status == '1')
-                                            Publish
-                                            @else
-                                            Draft
-                                            @endif
-                                        </td>
                                         <td class="text-center">
 											<a href="{{ route('iklan.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
-											{{-- <form action="{{ route('iklan.destroy', $row->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin?')">
-												@csrf
-												@method('delete')
-												<button class="btn btn-danger btn-sm" type="submit">
-													<i class="fa fa-times"></i>
-												</button>
-											</form> --}}
 										</td>
                                     </tr>
                                 @empty

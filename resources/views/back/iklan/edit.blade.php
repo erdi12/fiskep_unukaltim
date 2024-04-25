@@ -33,10 +33,6 @@
 							<input type="text" name="judul" class="form-control" id="judul" value="{{ $iklan->judul }}">
 						</div>
                         <div class="form-group">
-                            <label for="body">Link Video iklan</label>
-                            <textarea id="link" name="link" class="form-control">{{ $iklan->link }}</textarea>
-                        </div>
-                        <div class="form-group">
                             <label for="gambar">Gambar iklan</label>
                             <input type="file" name="gambar_iklan" class="form-control" accept="image/png, image/gif, image/jpeg, image/jpg">
                             @error('gambar_iklan')
@@ -45,13 +41,6 @@
                             <br>
                             <label for="gambar">Gambar Saat Ini</label><br class="mb-2">
                             <img src="{{ asset('uploads/'.$iklan->gambar_iklan) }}" width="150" class="img-fluid">
-                        </div>
-                        <div class="form-group">
-                            <label for="status">Status</label>
-                            <select name="status" class="form-control">
-                                <option value="1" {{ $iklan->status == '1' ? 'selected' : '' }} >Publish</option>
-                                <option value="0" {{ $iklan->status == '0' ? 'selected' : '' }}>Draft</option>
-                            </select>
                         </div>
 						<div class="form-group">
 							<button class="btn btn-primary btn-sm" type="submit">Simpan Data</button>

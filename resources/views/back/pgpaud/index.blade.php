@@ -46,7 +46,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($pgpaud as $row)
+                                @forelse ($pgpaudWithSpecificJabatan as $row)
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
                                         <td>{{ $row->nidn }}</td>

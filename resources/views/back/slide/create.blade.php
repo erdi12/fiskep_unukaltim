@@ -37,7 +37,7 @@
 					<form method="POST" action="{{ route('slide.store') }}" enctype="multipart/form-data">
 						@csrf
 						<div class="form-group">
-							<label for="judul">Nama Judul</label>
+							<label for="judul_slide">Nama Judul</label>
 							<input type="text" name="judul_slide" class="form-control" id="judul_slide" placeholder="Masukkan Judul" value="{{ old('judul_slide') }}">
 						</div>
 						<div class="form-group">
@@ -45,7 +45,7 @@
 							<input type="text" name="link" class="form-control" id="link" placeholder="Masukkan Link Video" value="{{ old('link') }}">
 						</div>
                         <div class="form-group">
-                            <label for="gambar">Gambar slide</label>
+                            <label for="gambar_slide">Gambar slide</label>
                             <input type="file" name="gambar_slide" class="form-control" accept="image/png, image/gif, image/jpeg, image/jpg">
 							@error('gambar_slide')
                                 <div class="text-danger">{{ $message }}</div>

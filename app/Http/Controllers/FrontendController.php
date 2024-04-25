@@ -3,17 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hi;
+use App\Models\Lpm;
+use App\Models\Dekan;
+use App\Models\Email;
 use App\Models\Iklan;
 use App\Models\Ilkom;
 use App\Models\Slide;
 use App\Models\Pgpaud;
+use App\Mail\SendEmail;
 use App\Models\Artikel;
-use App\Models\Dekan;
 use App\Models\Kategori;
-use App\Models\Lpm;
 use App\Models\VisiMisi;
+use Faker\Provider\ar_EG\Address;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class FrontendController extends Controller
 {
@@ -80,28 +84,53 @@ class FrontendController extends Controller
             ->orderBy('jabatan.id')
             ->get();
 
+        $ilkom = Ilkom::join('jabatan', 'ilkom.jabatan_id', '=', 'jabatan.id')
+            ->whereIn('jabatan.nama_jabatan', $positions)
+            ->orderByRaw("FIELD(jabatan.nama_jabatan, '" . implode("','", $positions) . "')")
+            ->orderBy('jabatan.id')
+            ->get();
+
+        $paud = Pgpaud::join('jabatan', 'pgpaud.jabatan_id', '=', 'jabatan.id')
+            ->whereIn('jabatan.nama_jabatan', $positions)
+            ->orderByRaw("FIELD(jabatan.nama_jabatan, '" . implode("','", $positions) . "')")
+            ->orderBy('jabatan.id')
+            ->get();
 
 
-        return view('front.about.about', compact('visimisi', 'dekan', 'tendik', 'hi'));
+
+        return view('front.about.about', compact('visimisi', 'dekan', 'tendik', 'hi', 'ilkom', 'paud'));
     }
 
     public function hubi() {
         
+        $positions = ['Laboran'];
+        $positions_2 = ['Laboran', 'Ketua Program Studi', 'Sekretaris Program Studi'];
         $hubi2 = Hi::first();
         // $hubi3 = Hi::skip(1)->take(1)->get();
-        $hubi = Hi::get()->skip(1);        
-        // $hubi = Hi::get()->skip(2);        
+        $hubi = Hi::join('jabatan', 'hi.jabatan_id', '=', 'jabatan.id')
+                    ->whereNotIn('jabatan.nama_jabatan', $positions_2)
+                    ->get();
+        // $hubi = Hi::get()->skip(2);
+        $hubi_laboran = Hi::join('jabatan', 'hi.jabatan_id', '=', 'jabatan.id')
+                            ->whereIn('jabatan.nama_jabatan', $positions)
+                            ->orderByRaw("FIELD(jabatan.nama_jabatan, '" . implode("','", $positions) . "')")
+                            ->get();
 
-        return view('front.hubi.hubi', compact('hubi','hubi2'));
+        return view('front.hubi.hubi', compact('hubi','hubi2', 'hubi_laboran'));
     }
 
     public function mukom() {
 
+        $positions = ['Laboran'];
         $mukom = Ilkom::first();
         $mukom2 = Ilkom::skip(1)->take(1)->get();
         $mukom3 = Ilkom::get()->skip(2);
+        $mukom4 = Ilkom::join('jabatan', 'ilkom.jabatan_id', '=', 'jabatan.id')
+                        ->whereIn('jabatan.nama_jabatan', $positions)
+                        ->orderByRaw("FIELD(jabatan.nama_jabatan, '" . implode("','", $positions) . "')")
+                        ->get();
 
-        return view('front.mukom.mukom', compact('mukom','mukom2','mukom3'));
+        return view('front.mukom.mukom', compact('mukom','mukom2','mukom3', 'mukom4'));
     }
 
     public function guru() {
@@ -119,6 +148,30 @@ class FrontendController extends Controller
     public function penjaminan() {
         $lpm = Lpm::all();
         return view('front.lpm.lpm', compact('lpm'));
+    }
+
+    public function email(Request $request) {
+
+        $request->validate([
+            'nama' => 'required|string',
+            'email' => 'required|email',
+            'subject' => 'required|string',
+            'pesan' => 'required|string',
+        ]);
+
+        // Simpan data ke database
+        $email = new Email();
+        $email->nama = $request->input('nama');
+        $email->email = $request->input('email');
+        $email->subject = $request->input('subject');
+        $email->pesan = $request->input('pesan');
+        $email->save();
+
+        // from: new Address($email->email, $email->nama);
+        // Kirim email
+        Mail::to('it@unukaltim.ac.id')->send(new SendEmail($email->nama, $email->email, $email->subject, $email->pesan));
+
+        return response()->json(['message' => 'Email berhasil dikirim']);
     }
 
 }

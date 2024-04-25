@@ -48,9 +48,9 @@
                         </div>
                     </div><hr>
                     <div class="row justify-content-center mb-4">
+                        <h1>Hubungan Internasional</h1>    
                         @foreach ($hi as $item)
-                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <h1>Hubungan Internasional</h1>
+                        <div class="col-lg-3 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="team-item bg-light">
                                 <div class="overflow-hidden">
                                     <img class="img-fluid" src="{{ asset('uploads/'.$item->foto) }}" alt="">
@@ -71,46 +71,51 @@
                         @endforeach
                     </div><hr>
                     <div class="row justify-content-center mb-4">
-                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <h1>Ilmu Komunikasi</h1>
-                            <div class="team-item bg-light">
-                                <div class="overflow-hidden">
-                                    <img class="img-fluid" src="{{ asset('uploads/'.$tendik->foto_dekan) }}" alt="">
-                                </div>
-                                <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                                    <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        <h1>Ilmu Komunikasi</h1>
+                        @foreach ($ilkom as $ilkom_item)
+                            <div class="col-lg-3 col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="team-item bg-light">
+                                    <div class="overflow-hidden">
+                                        <img class="img-fluid" src="{{ asset('uploads/'.$ilkom_item->foto) }}" alt="">
+                                    </div>
+                                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <h5 class="mb-0"> {{ $ilkom_item->nama}} </h5>
+                                        <small> {{ $ilkom_item->jabatan->nama_jabatan }} </small>
                                     </div>
                                 </div>
-                                <div class="text-center p-4">
-                                    <h5 class="mb-0"> {{ $tendik->nama}} </h5>
-                                    <small> {{ $tendik->jabatan->nama_jabatan }} </small>
-                                </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div><hr>
                     <div class="row justify-content-center mb-4">
-                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <h1>Pendidikan Anak Usia Dini</h1>
-                            <div class="team-item bg-light">
-                                <div class="overflow-hidden">
-                                    <img class="img-fluid" src="{{ asset('uploads/'.$tendik->foto_dekan) }}" alt="">
-                                </div>
-                                <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                                    <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        <h1>Pendidikan Anak Usia Dini</h1>
+                        @foreach ($paud as $item_paud)
+                            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="team-item bg-light">
+                                    <div class="overflow-hidden">
+                                        <img class="img-fluid" src="{{ asset('uploads/'.$item_paud->foto) }}" alt="">
+                                    </div>
+                                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <h5 class="mb-0"> {{ $item_paud->nama}} </h5>
+                                        <small> {{ $item_paud->jabatan->nama_jabatan }} </small>
                                     </div>
                                 </div>
-                                <div class="text-center p-4">
-                                    <h5 class="mb-0"> {{ $tendik->nama}} </h5>
-                                    <small> {{ $tendik->jabatan->nama_jabatan }} </small>
-                                </div>
                             </div>
-                        </div>
+                        @endforeach
+                        
                     </div>
                 </div>
                 @if ($visimisi)
