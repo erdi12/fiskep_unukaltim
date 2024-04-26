@@ -20,6 +20,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\VisiMisiHiController;
 use App\Http\Controllers\VisiMisiIlkomController;
 use App\Http\Controllers\TambahKategoriController;
@@ -40,6 +41,9 @@ Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/home', function(){
     return view('front.home');
 });
+Route::fallback(function(){
+    return abort(404);
+})->name('notfound');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/berita', [FrontendController::class, 'berita'])->name('berita');
 Route::get('/kategori/{kategoriSlug}', [FrontendController::class, 'kategori_berita'])->name('kategori-berita');
@@ -50,6 +54,7 @@ Route::get('/his', [FrontendController::class, 'hubi'])->name('hubi');
 Route::get('/ilkoms', [FrontendController::class, 'mukom'])->name('mukom');
 Route::get('/pgpauds', [FrontendController::class, 'guru'])->name('guru');
 Route::get('/penjaminan-mutu', [FrontendController::class, 'penjaminan'])->name('penjaminan-mutu');
+Route::get('/pengumuman_fiskep', [FrontendController::class, 'pengumuman_fiskep'])->name('pengumuman_fiskep');
 Route::post('/email', [FrontendController::class, 'email'])->name('email');
 
 Auth::routes();
@@ -72,5 +77,6 @@ Route::middleware(['web', 'auth', 'App\Http\Middleware\CheckUserActivity'])->gro
     Route::resource('ilkom', IlkomController::class);
     Route::resource('pgpaud', PgpaudController::class);
     Route::resource('lpm', LpmController::class);
+    Route::resource('pengumuman', PengumumanController::class);
     Route::get('/tambah-kategori', [TambahKategoriController::class, 'create'])->name('tambah-kategori');
 });

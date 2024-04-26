@@ -126,18 +126,36 @@
                     </span>
                     <h4 class="text-section">Konten Website</h4>
                 </li>
-                <li class="nav-item {{ request()->is('kategori*') ? 'active' : '' }}">
-                    <a href="{{ route('kategori.index') }}">
-                        <i class="fas fa-desktop"></i>
-                        <p>Kategori</p>
+                <li class="nav-item @yield('informasi')">
+                    <a data-toggle="collapse" href="#informasi">
+                        <i class="fas fa-address-book"></i>
+                        <p>Informasi</p>
+                        <span class="caret"></span>
                     </a>
+                    <div class="collapse @yield('info')" id="informasi">
+                        <ul class="nav nav-collapse">
+                            <li class="@yield('kategori')">
+                                <a href="{{ route('kategori.index') }}">
+                                    {{-- <i class="fas fa-desktop"></i> --}}
+                                    <span class="sub-item">Kategori</span>
+                                </a>
+                            </li>
+                            <li class="@yield('artikel')">
+                                <a href="{{ route('artikel.index') }}">
+                                    {{-- <i class="fas fa-pen"></i> --}}
+                                    <span class="sub-item">Artikel</span>
+                                </a>
+                            </li>
+                            <li class="@yield('pengumuman')">
+                                <a href="{{ route('pengumuman.index') }}">
+                                    {{-- <i class="fas fa-pen"></i> --}}
+                                    <span class="sub-item"></i>Pengumuman</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                <li class="nav-item {{ request()->is('artikel*') ? 'active' : '' }}">
-                    <a href="{{ route('artikel.index') }}">
-                        <i class="fas fa-pen"></i>
-                        <p>Artikel</p>
-                    </a>
-                </li>
+                
                 <li class="nav-item {{ request()->is('slide*') ? 'active' : '' }}">
                     <a href="{{ route('slide.index') }}">
                         <i class="fas fa-sliders-h"></i>
@@ -250,6 +268,35 @@
                         </span>
                         <h4 class="text-section">Konten Website</h4>
                     </li>
+                    <li class="nav-item @yield('informasi')">
+                        <a data-toggle="collapse" href="#informasi">
+                            <i class="fas fa-address-book"></i>
+                            <p>Informasi</p>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="collapse @yield('info')" id="informasi">
+                            <ul class="nav nav-collapse">
+                                <li class="@yield('kategori')">
+                                    <a href="{{ route('kategori.index') }}">
+                                        {{-- <i class="fas fa-desktop"></i> --}}
+                                        <span class="sub-item">Kategori</span>
+                                    </a>
+                                </li>
+                                <li class="@yield('artikel')">
+                                    <a href="{{ route('artikel.index') }}">
+                                        {{-- <i class="fas fa-pen"></i> --}}
+                                        <span class="sub-item">Artikel</span>
+                                    </a>
+                                </li>
+                                <li class="@yield('pengumuman')">
+                                    <a href="{{ route('pengumuman.index') }}">
+                                        {{-- <i class="fas fa-pen"></i> --}}
+                                        <span class="sub-item"></i>Pengumuman</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                     <li class="nav-item {{ request()->is('kategori*') ? 'active' : '' }}">
                         <a href="{{ route('kategori.index') }}">
                             <i class="fas fa-desktop"></i>
@@ -260,6 +307,12 @@
                         <a href="{{ route('artikel.index') }}">
                             <i class="fas fa-pen"></i>
                             <p>Artikel</p>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ request()->is('pengumuman*') ? 'active' : '' }}">
+                        <a href="{{ route('pengumuman.index') }}">
+                            <i class="fas fa-pen"></i>
+                            <p>Pengumuman</p>
                         </a>
                     </li>
                     <li class="nav-item {{ request()->is('slide*') ? 'active' : '' }}">

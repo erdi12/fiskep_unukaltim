@@ -9,7 +9,6 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{ route('index') }}" class="nav-item nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
-                <a href="{{ route('berita') }}" class="nav-item nav-link @yield('berita')">Berita</a>
                 <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle @yield('menu')" data-bs-toggle="dropdown">Program Studi</a>
@@ -20,10 +19,17 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle @yield('lembaga')" data-bs-target="dropdown">Lembaga</a>
+                    <a href="#" class="nav-link dropdown-toggle @yield('lembaga')" data-bs-toggle="dropdown">Lembaga</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="{{ route('penjaminan-mutu') }}" class="dropdown-item @yield('lpm')">LPM</a>
-                        <a href="" class="dropdown-item">LPPM</a>
+                        <a href="{{ url('notfound') }}" class="dropdown-item">LPPM</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle @yield('informasi')" data-bs-toggle="dropdown">Informasi</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="{{ route('berita') }}" class="dropdown-item @yield('berita')">Berita</a>
+                        <a href="{{ route('pengumuman_fiskep') }}" class="dropdown-item @yield('pengumuman')">Pengumuman</a>
                     </div>
                 </div>
                 <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>

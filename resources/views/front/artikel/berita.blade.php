@@ -1,4 +1,5 @@
 @extends('front.layouts.frontend')
+@section('informasi', 'active')
 @section('berita', 'active')
 @section('content')
     <div class="container-xxl py-5">

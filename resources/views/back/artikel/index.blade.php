@@ -1,4 +1,7 @@
 @extends('layouts.default')
+@section('info', 'show')
+@section('artikel', 'active')
+@section('informasi', 'active')
 
 @section('content')
 <div class="panel-header bg-primary-gradient">
@@ -59,18 +62,11 @@
 											@csrf
 											@method('delete')
 											<a href="{{ route('artikel.destroy', $row->id) }}" method="POST" class="d-inline btn btn-danger btn-sm" data-confirm-delete="true">Hapus</a>
-											{{-- <form action="{{ route('artikel.destroy', $row->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin?')">
-												@csrf
-												@method('delete')
-												<button class="btn btn-danger btn-sm" type="submit">
-													<i class="fa fa-times"></i>
-												</button>
-											</form> --}}
 										</td>
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="6" class="text-center">Data Masih Kosong</td>
+                                        <td colspan="8" class="text-center">Data Masih Kosong</td>
                                     </tr>
                                 @endforelse
                             </tbody>

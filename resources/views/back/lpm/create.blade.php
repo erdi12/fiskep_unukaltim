@@ -1,5 +1,6 @@
 @extends('layouts.default')
 
+
 @section('content')
 <div class="panel-header bg-primary-gradient">
 	<div class="page-inner py-5">

@@ -13,6 +13,7 @@ use App\Models\Pgpaud;
 use App\Mail\SendEmail;
 use App\Models\Artikel;
 use App\Models\Kategori;
+use App\Models\Pengumuman;
 use App\Models\VisiMisi;
 use Faker\Provider\ar_EG\Address;
 use Illuminate\Http\Request;
@@ -149,6 +150,12 @@ class FrontendController extends Controller
     public function penjaminan() {
         $lpm = Lpm::all();
         return view('front.lpm.lpm', compact('lpm'));
+    }
+
+    public function pengumuman_fiskep() {
+        $pengumuman = Pengumuman::all();
+
+        return view('front.pengumuman.pengumuman', compact('pengumuman'));
     }
 
     public function email(Request $request) {

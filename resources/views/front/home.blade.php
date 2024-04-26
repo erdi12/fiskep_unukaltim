@@ -64,7 +64,7 @@
                 <h1 class="mb-5">Program Studi Unggulan</h1>
             </div>
             <div class="row justify-content-center text-center wow fadeInUp">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 mb-2">
                     <div class="card">
                         <div class="text-center">
 
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 mb-2">
                     <div class="card">
                         <div class="text-center">
 
@@ -141,6 +141,25 @@
                     <a href="{{ route('berita') }}" class="btn btn-primary wow fadeInUp" data-wow-delay="0.3s">Selengkapnya</a>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Tes</div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Tis</div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Tus</div>
         </div>
     </div>
     <!-- Courses End -->

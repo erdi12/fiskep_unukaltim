@@ -1,4 +1,7 @@
 @extends('layouts.default')
+@section('informasi', 'active')
+@section('info', 'show')
+@section('kategori', 'active')
 
 @section('content')
 <div class="panel-header bg-primary-gradient">

@@ -1,16 +1,14 @@
 @extends('layouts.default')
 @section('informasi', 'active')
 @section('info', 'show')
-@section('kategori', 'active')
+@section('pengumuman', 'active')
 
 @section('content')
 <div class="panel-header bg-primary-gradient">
 	<div class="page-inner py-5">
 		<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 			<div>
-				<h2 class="text-white pb-2 fw-bold">Kategori</h2>
-			</div>
-			<div class="ml-md-auto py-2 py-md-0">
+				<h2 class="text-white pb-2 fw-bold">Pengumuman</h2>
 			</div>
 		</div>
 	</div>
@@ -21,8 +19,8 @@
 			<div class="card full-height">
 				<div class="card-header">
 					<div class="card-head-row">
-						<div class="card-title">Data Kategori</div>
-                        <a href="{{ route('tambah-kategori') }}" class="btn btn-primary btn-sm ml-auto">Tambah Kategori <i class="fa fa-plus-circle"></i></a>
+						<div class="card-title">Data Pengumuman</div>
+                        <a href="{{ route('pengumuman.create') }}" class="btn btn-primary btn-sm ml-auto">Tambah Pengumuman <i class="fa fa-plus-circle"></i></a>
 					</div>
 				</div>
 				<div class="card-body">
@@ -36,26 +34,22 @@
                             <thead class="text-center">
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nama Kategori</th>
-                                    <th>Slug</th>
-                                    <th>Action</th>
+                                    <th>Nama</th>
+                                    <th>link</th>
+                                    <th>aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($kategori as $row)
+                                @forelse ($pengumuman as $row)
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
-                                        <td>{{ $row->nama_kategori }}</td>
-                                        <td>{{ $row->slug }}</td>
+                                        <td>{{ $row->nama }}</td>
+                                        <td>{{ $row->link }}</td>
                                         <td class="text-center">
-											<a href="{{ route('kategori.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
+											<a href="{{ route('pengumuman.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
 											@csrf
 											@method('delete')
-											<a href="{{ route('kategori.destroy', $row->id) }}" method="POST" class="d-inline btn btn-danger btn-sm" data-confirm-delete="true">Hapus</a>
-											<form action="{{ route('kategori.destroy', $row->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin?')">
-												@csrf
-												@method('delete')
-											</form>
+											<a href="{{ route('pengumuman.destroy', $row->id) }}" method="POST" class="d-inline btn btn-danger btn-sm" data-confirm-delete="true">Hapus</a>
 										</td>
                                     </tr>
                                 @empty
