@@ -12,11 +12,12 @@
             </div>
             <div class="row justify-content-center mb-4">
                 <div class="col-lg-8 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <table class="table table-bordered">
+                    <table id="lpm-datatable" class="table table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col" class="text-center">No</th>
                                 <th scope="col" class="text-center">Nama</th>
+                                <th scope="col" class="text-center">Tanggal</th>
                                 <th scope="col" class="text-center">Link</th>
                             </tr>
                         </thead>
@@ -25,6 +26,7 @@
                                 <tr>
                                     <th class="text-center">{{ $loop->iteration }}</th>
                                     <td>{{ $row->nama }}</td>
+                                    <td class="text-center">{{ $row->created_at->formatLocalized('%d %B %Y') }}</td>
                                     <td class="text-center">
                                         <a href="{{ $row->link }}" target="_blank">Klk Disini</a>
                                     </td>

@@ -28,6 +28,7 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle @yield('informasi')" data-bs-toggle="dropdown">Informasi</a>
                     <div class="dropdown-menu fade-down m-0">
+                        <a href="{{ route('akademik') }}" class="dropdown-item @yield('akademik')">Akademik</a>
                         <a href="{{ route('berita') }}" class="dropdown-item @yield('berita')">Berita</a>
                         <a href="{{ route('pengumuman_fiskep') }}" class="dropdown-item @yield('pengumuman')">Pengumuman</a>
                     </div>

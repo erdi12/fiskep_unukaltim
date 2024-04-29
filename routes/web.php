@@ -56,6 +56,7 @@ Route::get('/pgpauds', [FrontendController::class, 'guru'])->name('guru');
 Route::get('/penjaminan-mutu', [FrontendController::class, 'penjaminan'])->name('penjaminan-mutu');
 Route::get('/pengumuman_fiskep', [FrontendController::class, 'pengumuman_fiskep'])->name('pengumuman_fiskep');
 Route::post('/email', [FrontendController::class, 'email'])->name('email');
+Route::get('/akademik', [FrontendController::class, 'akademik'])->name('akademik');;
 
 Auth::routes();
 

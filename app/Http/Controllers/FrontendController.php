@@ -62,7 +62,7 @@ class FrontendController extends Controller
         $iklan      = Iklan::all();
         $article    = Artikel::where('slug', $slug)->first();
         $article->increment('views');
-        $articleTerbaru = Artikel::take(3)->get();
+        $articleTerbaru = Artikel::latest()->take(3)->get();
 
         return view('front.artikel.detail-artikel', [
             'article' => $article,
@@ -181,6 +181,10 @@ class FrontendController extends Controller
         // Alert::success('Sukses!', 'Data Berhasil Terkirim');
         return redirect()->route('contact')->with(['success' => 'Sukses']);
         // return response()->json(['message' => 'Email berhasil dikirim']);
+    }
+
+    public function akademik() {
+        return view('front.akademik.akademik');
     }
 
 }

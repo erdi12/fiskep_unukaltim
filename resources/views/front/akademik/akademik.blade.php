@@ -1,14 +1,14 @@
 @extends('front.layouts.frontend')
 @section('informasi', 'active')
-@section('pengumuman', 'active')
+@section('akademik', 'active')
 
 @section('content')
     <!-- Team Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Pengumuman Fakultas Ilmu Sosial dan Kependidikan</h6>
-                {{-- <h1 class="mb-5">Expert Lecturer</h1> --}}
+                <h6 class="section-title bg-white text-center text-primary px-3">Fakultas Ilmu Sosial dan Kependidikan</h6>
+                <h1 class="mb-5">Informasi Akademik</h1>
             </div>
             <div class="row justify-content-center mb-4">
                 <div class="col-lg-8 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -31,7 +31,7 @@
                                         <a href="{{ $row->link }}" target="_blank">Klk Disini</a>
                                     </td>
                                 </tr>
-                            @endforeach                            
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -297,24 +297,6 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item {{ request()->is('kategori*') ? 'active' : '' }}">
-                        <a href="{{ route('kategori.index') }}">
-                            <i class="fas fa-desktop"></i>
-                            <p>Kategori</p>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ request()->is('artikel*') ? 'active' : '' }}">
-                        <a href="{{ route('artikel.index') }}">
-                            <i class="fas fa-pen"></i>
-                            <p>Artikel</p>
-                        </a>
-                    </li>
-                    <li class="nav-item {{ request()->is('pengumuman*') ? 'active' : '' }}">
-                        <a href="{{ route('pengumuman.index') }}">
-                            <i class="fas fa-pen"></i>
-                            <p>Pengumuman</p>
-                        </a>
-                    </li>
                     <li class="nav-item {{ request()->is('slide*') ? 'active' : '' }}">
                         <a href="{{ route('slide.index') }}">
                             <i class="fas fa-sliders-h"></i>
