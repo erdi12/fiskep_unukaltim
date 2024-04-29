@@ -21,7 +21,7 @@ class CreateArtikelsTable extends Migration
             $table->integer('kategori_id');
             $table->integer('user_id');
             $table->string('gambar_artikel');
-            $table->boolean('is_active');
+            // $table->boolean('is_active');
             $table->integer('views')->default(0);
             $table->timestamps();
         });

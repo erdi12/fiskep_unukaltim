@@ -46,7 +46,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($hi as $row)
+                                @forelse ($hiWithSpecificJabatan as $row)
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
                                         <td>{{ $row->nidn }}</td>

@@ -46,13 +46,6 @@
                             <label for="gambar">Gambar Saat Ini</label><br class="mb-2">
                             <img src="{{ asset('uploads/'.$slide->gambar_slide) }}" width="150" class="img-fluid">
                         </div>
-                        <div class="form-group">
-                            <label for="status">Status</label>
-                            <select name="status" class="form-control">
-                                <option value="1" {{ $slide->status == '1' ? 'selected' : '' }} >Publish</option>
-                                <option value="0" {{ $slide->status == '0' ? 'selected' : '' }}>Draft</option>
-                            </select>
-                        </div>
 						<div class="form-group">
 							<button class="btn btn-primary btn-sm" type="submit">Simpan Data</button>
 							<button class="btn btn-danger btn-sm" type="reset">Reset Data</button>

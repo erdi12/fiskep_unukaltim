@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lpm;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LpmController extends Controller
 {
@@ -13,7 +16,14 @@ class LpmController extends Controller
      */
     public function index()
     {
-        //
+        $lpm = Lpm::all();
+
+        $title = 'Hapus Data!';
+        $text = 'Apakah Anda Yakin?';
+
+        confirmDelete($title, $text);
+
+        return view('back.lpm.index', compact('lpm'));
     }
 
     /**
@@ -23,7 +33,7 @@ class LpmController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.lpm.create');
     }
 
     /**
@@ -34,7 +44,20 @@ class LpmController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama' => 'required|min:4',
+            'link' => 'required|min:4'
+        ]);
+
+        Lpm::create([
+            'nama' => $request->nama,
+            'slug' => Str::slug($request->nama),
+            'link' => $request->link
+        ]);
+
+        Alert::success('Sukses!', 'Data Berhasil Tersimpan!');
+
+        return redirect()->route('lpm.index');
     }
 
     /**
@@ -56,7 +79,8 @@ class LpmController extends Controller
      */
     public function edit($id)
     {
-        //
+        $lpm = Lpm::findOrFail($id);
+        return view('back.lpm.edit', compact('lpm'));
     }
 
     /**
@@ -68,7 +92,15 @@ class LpmController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $data['nama'] = Str::slug($request->nama);
+
+        $lpm = Lpm::findOrFail($id);
+        $lpm->update($data);
+
+        Alert::success('Data Terupdate', 'Data Berhasil Diupdate!');
+
+        return redirect()->route('lpm.index');
     }
 
     /**
@@ -79,6 +111,9 @@ class LpmController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $lpm = Lpm::findOrFail($id);
+        $lpm->delete();
+        Alert::success('Data Terhapus', 'Data Berhasil Dihapus!');
+        return redirect()->route('lpm.index');
     }
 }

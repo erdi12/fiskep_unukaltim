@@ -5,6 +5,19 @@
     --dark: #181d38;
 }
 
+body {
+    /* <a target="_blank" href="https://icons8.com/icon/uKVJzWYdiV27/cursor">Cursor</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */
+    cursor: url(../img/cursor.png), auto;
+}
+
+.btn {
+    cursor: url(../img/cursor.png), auto;
+}
+
+/* #close-iklan {
+    cursor: url(../img/cursor.png), auto;
+} */
+
 .fw-medium {
     font-weight: 600 !important;
 }

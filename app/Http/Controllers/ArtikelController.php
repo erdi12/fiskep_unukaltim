@@ -22,7 +22,7 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $artikel = Artikel::all();
+        $artikel = Artikel::latest('created_at')->get();
 
         $title = 'Hapus Data!';
         $text = 'Apakah Anda Yakin?';
@@ -138,7 +138,6 @@ class ArtikelController extends Controller
                 'body' => $request->body,
                 'slug' => Str::slug($request->judul),
                 'kategori_id' => $request->kategori_id,
-                'is_active' => $request->is_active,
                 'user_id' => Auth::id(),
                 'views' => 0
             ]);
@@ -163,7 +162,6 @@ class ArtikelController extends Controller
                 'body' => $request->body,
                 'slug' => Str::slug($request->judul),
                 'kategori_id' => $request->kategori_id,
-                'is_active' => $request->is_active,
                 'user_id' => Auth::id(),
                 'views' => 0,
                 'gambar_artikel' => $request->file('gambar_artikel')->store('artikel')

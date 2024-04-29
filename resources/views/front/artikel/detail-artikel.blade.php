@@ -18,10 +18,10 @@
                 <h2>{{ $article->judul }}</h2>
             </div> --}}
             <div class="mt-2 p-4">
-                <span class="badge bg-secondary">{{$article->created_at->format('d M Y H:i:s')}}</span>
-                <span class="badge bg-warning text-dark">{{$article->kategori->nama_kategori}}</span>
-                <span class="badge bg-primary">{{$article->users->name}}</span>
-                <span class="badge bg-primary">Total Views: {{$article->views}}</span>
+                <span class="badge bg-secondary"><i class="bi bi-calendar3"></i> {{$article->created_at->format('d M Y')}}</span>
+                <span class="badge bg-warning text-dark"><i class="bi bi-tag-fill"></i> {{$article->kategori->nama_kategori}}</span>
+                <span class="badge bg-primary"><i class="bi bi-person-fill"></i> {{$article->users->name}}</span>
+                <span class="badge bg-primary"><i class="bi bi-eye-fill"></i> Total Views: {{$article->views}}</span>
                 <hr>
                 <h2>{{ $article->judul }}</h2>
                 <p align="justify">{!!$article->body!!}</p>
@@ -55,26 +55,35 @@
                     <p class="ms-auto text-right"><span class="badge bg-dark">{{ $cat->articles->count() }}</span></p>
                 </div>
             @endforeach
-            <h4 class="mt-4">Berita Terbaru</h4><hr>
-            @foreach ($articleTerbaru as $pop)
-                <div class="course-item bg-light mb-3">
-                    <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="{{ asset('uploads/'.$pop->gambar_artikel)}} " alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="{{ route('detail-artikel', $pop->slug) }}" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 30px">Read More</a>
+            <h4 class="mt-4">Berita Terbaru</h4>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Terbaru</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Pengumuman</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    @foreach ($articleTerbaru as $pop)
+                    <ul class="list-group ">
+                        <li class="list-group-item border-0 d-flex justify-content-between align-items-center">
+                            <img src="{{ asset('uploads/'.$pop->gambar_artikel) }}" alt="" class="img-fluid" style="width: 30%">
+                            <div class="ms-2 me-auto">
+                                <a href="{{ route('detail-artikel', $pop->slug) }}"> {{ $pop->judul }}</a><br>
+                                <span class="badge bg-primary rounded-pill">{{ $pop->created_at->format('Y-m-d') }}</span>
                             </div>
-                    </div>
-                    <div class="text-center p-4 pb-0">
-                        <h3 class="mb-0">{{ $pop->judul }}</h3>
-                        <span class="badge bg-secondary mb-3" style="border-radius: 30px;">{{ $pop->kategori->nama_kategori }}</span>
-                        {{-- <h5 class="mb-4">{!! Str::limit($art->body, 100) !!}</h5> --}}
-                    </div>
-                    {{-- <div class="d-flex border-top">
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>{{ $pop->users->name }}</small>
-                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>{{ $pop->created_at->diffForHumans() }}</small>
-                    </div> --}}
+                        </li><hr>
+                    </ul>
+                    @endforeach
                 </div>
-            @endforeach
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Tis</div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Tus</div>
+            </div>                
         </div>
     </div>
 </div>

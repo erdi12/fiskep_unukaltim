@@ -33,7 +33,8 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        return view ('back.kategori.create');
+        $kategori = Kategori::all();
+        return view('back.kategori.create', compact('kategori'));
     }
 
     /**
@@ -48,7 +49,7 @@ class KategoriController extends Controller
             'nama_kategori' => 'required|min:4'
         ]);
 
-        $kategori = Kategori::create([
+        Kategori::create([
             'nama_kategori' => $request->nama_kategori,
             'slug' => Str::slug($request->nama_kategori)
         ]);
@@ -118,4 +119,5 @@ class KategoriController extends Controller
 
         return redirect()->route('kategori.index');
     }
+
 }

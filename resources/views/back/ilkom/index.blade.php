@@ -46,7 +46,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($ilkom as $row)
+                                @forelse ($ilkomWithSpecificJabatan as $row)
                                     <tr>
                                         <td class="text-center">{{ $loop->iteration }}</td>
                                         <td>{{ $row->nidn }}</td>

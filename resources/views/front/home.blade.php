@@ -19,12 +19,12 @@
                             @endforeach
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
@@ -64,54 +64,42 @@
                 <h1 class="mb-5">Program Studi Unggulan</h1>
             </div>
             <div class="row justify-content-center text-center wow fadeInUp">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 mb-2">
                     <div class="card">
                         <div class="text-center">
-<<<<<<< HEAD
-                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 60%" class="card-img-top img-fluid" alt="...">
-=======
 
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
->>>>>>> 2f220d3cb51021952a49659ca1a0405046b8ccdb
                         </div>
                         <div class="card-body">
-                          <h5 class="card-title">Hubungan Internasional</h5>
-                          <p class="card-text">Program Sarjana (S-1)</p>
-                          <a href="{{ route('hubi') }}" class="btn btn-primary">Lihat Selengkapnya</a>
+                            <h5 class="card-title">Hubungan Internasional</h5>
+                            <p class="card-text">Program Sarjana (S-1)</p>
+                            <a href="{{ route('hubi') }}" class="btn btn-primary">Lihat Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-2">
+                    <div class="card">
+                        <div class="text-center">
+
+                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Ilmu Komunikasi</h5>
+                            <p class="card-text">Program Sarjana (S-1)</p>
+                            <a href="{{ route('mukom') }}" class="btn btn-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="card">
                         <div class="text-center">
-<<<<<<< HEAD
-                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 60%" class="card-img-top img-fluid" alt="...">
-=======
 
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
->>>>>>> 2f220d3cb51021952a49659ca1a0405046b8ccdb
                         </div>
                         <div class="card-body">
-                          <h5 class="card-title">Ilmu Komunikasi</h5>
-                          <p class="card-text">Program Sarjana (S-1)</p>
-                          <a href="{{ route('mukom') }}" class="btn btn-primary">Lihat Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <div class="text-center">
-<<<<<<< HEAD
-                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 60%" class="card-img-top img-fluid" alt="...">
-=======
-
-                            <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
->>>>>>> 2f220d3cb51021952a49659ca1a0405046b8ccdb
-                        </div>
-                        <div class="card-body">
-                          <h6 class="card-title">Pendidikan Guru - Pendidikan Anak Usia Dini</h6>
-                          <p class="card-text">Program Sarjana (S-1)</p>
-                          <a href="{{ route('guru') }}" class="btn btn-primary">lihat Selengkapnya</a>
+                            <h6 class="card-title">Pendidikan Guru - Pendidikan Anak Usia Dini</h6>
+                            <p class="card-text">Program Sarjana (S-1)</p>
+                            <a href="{{ route('guru') }}" class="btn btn-primary">lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -245,7 +233,7 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    {{-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
                 <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
@@ -286,6 +274,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Testimonial End -->
     @endsection

@@ -1,4 +1,7 @@
 @extends('layouts.default')
+@section('info', 'show')
+@section('artikel', 'active')
+@section('informasi', 'active')
 
 @section('content')
 <div class="panel-header bg-primary-gradient">
@@ -31,7 +34,7 @@
 						</div>
 					@endif
 					<div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table id="basic-datatables" class="display table table-bordered table-hover">
                             <thead class="text-center">
                                 <tr>
                                     <th>ID</th>
@@ -39,6 +42,7 @@
                                     <th>Slug</th>
                                     <th>Kategori</th>
                                     <th>Author</th>
+                                    <th>Waktu</th>
                                     <th>Gambar</th>
                                     <th>Action</th>
                                 </tr>
@@ -51,24 +55,18 @@
                                         <td>{{ $row->slug }}</td>
                                         <td>{{ $row->kategori->nama_kategori }}</td>
                                         <td>{{ $row->users->name }}</td>
+                                        <td>{{ $row->created_at->diffForHumans() }}</td>
 										<td class="text-center"><img src="{{ asset('uploads/'.$row->gambar_artikel) }}" width="100" class="img-fluid"></td>
                                         <td class="text-center">
 											<a href="{{ route('artikel.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
 											@csrf
 											@method('delete')
 											<a href="{{ route('artikel.destroy', $row->id) }}" method="POST" class="d-inline btn btn-danger btn-sm" data-confirm-delete="true">Hapus</a>
-											{{-- <form action="{{ route('artikel.destroy', $row->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin?')">
-												@csrf
-												@method('delete')
-												<button class="btn btn-danger btn-sm" type="submit">
-													<i class="fa fa-times"></i>
-												</button>
-											</form> --}}
 										</td>
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="6" class="text-center">Data Masih Kosong</td>
+                                        <td colspan="8" class="text-center">Data Masih Kosong</td>
                                     </tr>
                                 @endforelse
                             </tbody>

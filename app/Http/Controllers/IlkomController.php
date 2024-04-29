@@ -19,10 +19,11 @@ class IlkomController extends Controller
     {
         $ilkom = Ilkom::all();
 
-        $hi = Ilkom::join('jabatan', 'ilkom.jabatan_id', '=', 'jabatan.id')
+        $ilkomWithSpecificJabatan = Ilkom::join('jabatan', 'ilkom.jabatan_id', '=', 'jabatan.id')
                     ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', 1, 0)")
                     ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', ilkom.nama, '')")
                     ->orderBy('jabatan.id')
+                    ->orderBy('nama', 'asc')
                     ->get();
 
         $title = 'Hapus Data!';
@@ -30,7 +31,7 @@ class IlkomController extends Controller
 
         confirmDelete($title, $text);
 
-        return view('back.ilkom.index', compact('ilkom'));
+        return view('back.ilkom.index', compact('ilkom', 'ilkomWithSpecificJabatan'));
     }
 
     /**

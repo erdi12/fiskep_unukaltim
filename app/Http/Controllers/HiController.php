@@ -29,7 +29,7 @@ class HiController extends Controller
 
         confirmDelete($title, $text);
 
-        return view('back.hi.index', compact('hi'));
+        return view('back.hi.index', compact('hi', 'hiWithSpecificJabatan'));
     }
 
     /**

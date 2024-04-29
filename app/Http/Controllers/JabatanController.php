@@ -47,7 +47,7 @@ class JabatanController extends Controller
             'nama_jabatan' => 'required|min:4'
         ]);
 
-        $jabatan = Jabatan::create([
+        Jabatan::create([
             'nama_jabatan' => $request->nama_jabatan
         ]);
 

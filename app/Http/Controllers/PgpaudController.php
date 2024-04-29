@@ -22,6 +22,7 @@ class PgpaudController extends Controller
                     ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', 1, 0)")
                     ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', pgpaud.nama, '')")
                     ->orderBy('jabatan.id')
+                    ->orderBy('nama', 'asc')
                     ->get();
         $jabatan = Jabatan::all();
 
@@ -30,7 +31,7 @@ class PgpaudController extends Controller
 
         confirmDelete($title, $text);
 
-        return view('back.pgpaud.index', compact('pgpaud', 'jabatan'));
+        return view('back.pgpaud.index', compact('pgpaud', 'jabatan', 'pgpaudWithSpecificJabatan'));
     }
 
     /**

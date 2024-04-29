@@ -38,7 +38,6 @@
                                     <th>Judul slide</th>
                                     <th>link</th>
                                     <th>Gambar</th>
-                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -51,13 +50,6 @@
 										<td class="text-center">
 											<img src="{{ asset('uploads/'.$row->gambar_slide) }}" width="100" class="img-fluid">
 										</td>
-                                        <td>
-                                            @if ($row->status == '1')
-                                            Publish
-                                            @else
-                                            Draft
-                                            @endif
-                                        </td>
                                         <td class="text-center">
 											<a href="{{ route('slide.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
 											@csrf

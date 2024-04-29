@@ -16,9 +16,7 @@ class CreateIklansTable extends Migration
         Schema::create('iklan', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('judul')->nullable();
-            $table->text('link')->nullable();
             $table->text('gambar_iklan')->nullable();
-            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }

@@ -14,8 +14,7 @@ class Slide extends Model
     protected $fillable = [
         'judul_slide',
         'link',
-        'gambar_slide',
-        'status'
+        'gambar_slide'
     ];
 
     protected $hidden = [];

@@ -51,6 +51,28 @@
                     </div>
                 @endforeach
             </div>
+            <div class="row justify-content-center mb-4">
+                @foreach ($mukom4 as $item)    
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item bg-light">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src="{{ asset('uploads/'.$item->foto) }}" alt="">
+                            </div>
+                            <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                                <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4">
+                                <h5 class="mb-0"> {{ $item->nama}} </h5>
+                                <small> {{ $item->jabatan->nama_jabatan }} </small>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
             <div class="row justify-content-center g-4">
                 @foreach ($mukom3 as $row)                    
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
