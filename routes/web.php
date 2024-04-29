@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Akademik;
 use App\Models\VisiMisiHi;
 use App\Http\Middleware\CheckRole;
 use Illuminate\Support\Facades\Auth;
@@ -15,6 +16,7 @@ use App\Http\Controllers\MateriController;
 use App\Http\Controllers\PgpaudController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\AkademikController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PlaylistController;
@@ -56,7 +58,7 @@ Route::get('/pgpauds', [FrontendController::class, 'guru'])->name('guru');
 Route::get('/penjaminan-mutu', [FrontendController::class, 'penjaminan'])->name('penjaminan-mutu');
 Route::get('/pengumuman_fiskep', [FrontendController::class, 'pengumuman_fiskep'])->name('pengumuman_fiskep');
 Route::post('/email', [FrontendController::class, 'email'])->name('email');
-Route::get('/akademik', [FrontendController::class, 'akademik'])->name('akademik');;
+Route::get('/akademik-fiskep', [FrontendController::class, 'akademiks'])->name('akademiks');;
 
 Auth::routes();
 
@@ -79,5 +81,6 @@ Route::middleware(['web', 'auth', 'App\Http\Middleware\CheckUserActivity'])->gro
     Route::resource('pgpaud', PgpaudController::class);
     Route::resource('lpm', LpmController::class);
     Route::resource('pengumuman', PengumumanController::class);
+    Route::resource('akademik', AkademikController::class);
     Route::get('/tambah-kategori', [TambahKategoriController::class, 'create'])->name('tambah-kategori');
 });

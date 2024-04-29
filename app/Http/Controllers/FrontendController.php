@@ -11,6 +11,7 @@ use App\Models\Ilkom;
 use App\Models\Slide;
 use App\Models\Pgpaud;
 use App\Mail\SendEmail;
+use App\Models\Akademik;
 use App\Models\Artikel;
 use App\Models\Kategori;
 use App\Models\Pengumuman;
@@ -136,6 +137,7 @@ class FrontendController extends Controller
     }
 
     public function guru() {
+        
         $guru = Pgpaud::first();
         $guru2 = Pgpaud::get()->skip(1)->take(1);
         $guru3 = Pgpaud::get()->skip(2);
@@ -144,15 +146,20 @@ class FrontendController extends Controller
     }
 
     public function contact() {
+
         return view('front.contact.contact');
+
     }
 
     public function penjaminan() {
+
         $lpm = Lpm::all();
+
         return view('front.lpm.lpm', compact('lpm'));
     }
 
     public function pengumuman_fiskep() {
+
         $pengumuman = Pengumuman::all();
 
         return view('front.pengumuman.pengumuman', compact('pengumuman'));
@@ -183,8 +190,11 @@ class FrontendController extends Controller
         // return response()->json(['message' => 'Email berhasil dikirim']);
     }
 
-    public function akademik() {
-        return view('front.akademik.akademik');
+    public function akademiks() {
+
+        $akademik = Akademik::all();
+
+        return view('front.akademik.akademik', compact('akademik'));
     }
 
 }

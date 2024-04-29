@@ -22,7 +22,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pengumuman as $row)
+                            @foreach ($akademik as $row)
                                 <tr>
                                     <th class="text-center">{{ $loop->iteration }}</th>
                                     <td>{{ $row->nama }}</td>

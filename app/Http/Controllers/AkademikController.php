@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pengumuman;
+use App\Models\Akademik;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class PengumumanController extends Controller
+class AkademikController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,14 @@ class PengumumanController extends Controller
      */
     public function index()
     {
-        $pengumuman = Pengumuman::all();
-        return view('back.pengumuman.index', compact('pengumuman'));
+        $akademik = Akademik::all();
+
+        $title = 'Hapus Data!';
+        $text = 'Apakah Anda Yakin?';
+
+        confirmDelete($title, $text);
+
+        return view('back.akademik.index', compact('akademik'));
     }
 
     /**
@@ -26,7 +32,7 @@ class PengumumanController extends Controller
      */
     public function create()
     {
-        return view('back.pengumuman.create');
+        return view('back.akademik.create');
     }
 
     /**
@@ -42,14 +48,13 @@ class PengumumanController extends Controller
             'link' => 'required|min:4'
         ]);
 
-        Pengumuman::create([
+        Akademik::create([
             'nama' => $request->nama,
             'link' => $request->link
         ]);
 
-        Alert::success('Sukses!', 'Data Berhasil Tersimpan!');
-
-        return redirect()->route('pengumuman.index');
+        Alert::success('Sukses!', 'Data Berhasil Ditambah!');
+        return redirect()->route('akademik.index');
     }
 
     /**
@@ -71,9 +76,9 @@ class PengumumanController extends Controller
      */
     public function edit($id)
     {
-        $pengumuman = Pengumuman::find($id);
+        $akademik = Akademik::find($id);
 
-        return view('back.pengumuman.edit', compact('pengumuman'));
+        return view('back.akademik.edit', compact('akademik'));
     }
 
     /**
@@ -87,12 +92,11 @@ class PengumumanController extends Controller
     {
         $data = $request->all();
 
-        $pengumuman = Pengumuman::findOrFail($id);
-        $pengumuman->update($data);
+        $akademik = Akademik::find($id);
+        $akademik->update($data);
 
-        Alert::success('Data Terupdate', 'Data Berhasil Diupdate!');
-
-        return redirect()->route('pengumuman.index');
+        Alert::success('Sukses!', 'Data Berhasil Diubah!');
+        return redirect()->route('akademik.index');
     }
 
     /**
@@ -103,9 +107,11 @@ class PengumumanController extends Controller
      */
     public function destroy($id)
     {
-        $pengumuman = Pengumuman::findOrFail($id);
-        $pengumuman->delete();
-        Alert::success('Data Terhapus', 'Data Berhasil Dihapus!');
-        return redirect()->route('pengumuman.index');
+        $akademik = Akademik::find($id);
+
+        $akademik->delete();
+
+        Alert::success('Sukses!', 'Data Berhasil Dihapus!');
+        return redirect()->route('akademik.index');
     }
 }

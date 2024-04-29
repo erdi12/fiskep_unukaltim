@@ -152,6 +152,12 @@
                                     <span class="sub-item"></i>Pengumuman</span>
                                 </a>
                             </li>
+                            <li class="@yield('akademik')">
+                                <a href="{{ route('akademik.index') }}">
+                                    {{-- <i class="fas fa-pen"></i> --}}
+                                    <span class="sub-item"></i>Akademik</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -292,6 +298,12 @@
                                     <a href="{{ route('pengumuman.index') }}">
                                         {{-- <i class="fas fa-pen"></i> --}}
                                         <span class="sub-item"></i>Pengumuman</span>
+                                    </a>
+                                </li>
+                                <li class="@yield('akademik')">
+                                    <a href="{{ route('akademik.index') }}">
+                                        {{-- <i class="fas fa-pen"></i> --}}
+                                        <span class="sub-item"></i>akademik</span>
                                     </a>
                                 </li>
                             </ul>
