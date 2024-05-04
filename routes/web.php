@@ -60,7 +60,7 @@ Route::get('/pengumuman_fiskep', [FrontendController::class, 'pengumuman_fiskep'
 Route::post('/email', [FrontendController::class, 'email'])->name('email');
 Route::get('/akademik-fiskep', [FrontendController::class, 'akademiks'])->name('akademiks');;
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::middleware(['web', 'auth', 'App\Http\Middleware\CheckUserActivity'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

@@ -16,6 +16,9 @@ use App\Models\Artikel;
 use App\Models\Kategori;
 use App\Models\Pengumuman;
 use App\Models\VisiMisi;
+use App\Models\VisiMisiHi;
+use App\Models\VisiMisiIlkom;
+use App\Models\VisiMisiPgpaud;
 use Faker\Provider\ar_EG\Address;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -118,8 +121,10 @@ class FrontendController extends Controller
                             ->whereIn('jabatan.nama_jabatan', $positions)
                             ->orderByRaw("FIELD(jabatan.nama_jabatan, '" . implode("','", $positions) . "')")
                             ->get();
+        
+        $hubi_visi = VisiMisiHi::first();
 
-        return view('front.hubi.hubi', compact('hubi','hubi2', 'hubi_laboran'));
+        return view('front.hubi.hubi', compact('hubi','hubi2', 'hubi_laboran', 'hubi_visi'));
     }
 
     public function mukom() {
@@ -133,7 +138,9 @@ class FrontendController extends Controller
                         ->orderByRaw("FIELD(jabatan.nama_jabatan, '" . implode("','", $positions) . "')")
                         ->get();
 
-        return view('front.mukom.mukom', compact('mukom','mukom2','mukom3', 'mukom4'));
+        $mukom_visimisi = VisiMisiIlkom::first();
+
+        return view('front.mukom.mukom', compact('mukom','mukom2','mukom3', 'mukom4', 'mukom_visimisi'));
     }
 
     public function guru() {
@@ -141,8 +148,9 @@ class FrontendController extends Controller
         $guru = Pgpaud::first();
         $guru2 = Pgpaud::get()->skip(1)->take(1);
         $guru3 = Pgpaud::get()->skip(2);
+        $guru_visimisi = VisiMisiPgpaud::first();
 
-        return view('front.guru.guru', compact('guru','guru2','guru3'));
+        return view('front.guru.guru', compact('guru','guru2','guru3', 'guru_visimisi'));
     }
 
     public function contact() {
