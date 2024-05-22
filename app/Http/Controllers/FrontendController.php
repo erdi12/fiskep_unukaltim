@@ -66,14 +66,16 @@ class FrontendController extends Controller
         $iklan      = Iklan::all();
         $article    = Artikel::where('slug', $slug)->first();
         $article->increment('views');
-        $articleTerbaru = Artikel::latest()->take(3)->get();
+        $articleTerbaru = Artikel::latest()->take(5)->get();
+        $pengumumuan_detail_article = Pengumuman::latest()->take(5)->get();
 
         return view('front.artikel.detail-artikel', [
             'article' => $article,
             'category' => $category,
             'slide' => $slide,
             'iklan' => $iklan,
-            'articleTerbaru' => $articleTerbaru
+            'articleTerbaru' => $articleTerbaru,
+            'pengumuman_detail_article' => $pengumumuan_detail_article
         ]);
     }
 

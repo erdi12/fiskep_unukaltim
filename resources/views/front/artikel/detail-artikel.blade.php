@@ -81,7 +81,18 @@
                     </ul>
                     @endforeach
                 </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Tis</div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    @foreach ($pengumuman_detail_article as $pengumuman)
+                        <ul class="list-group ">
+                            <li class="list-group-item border-0 d-flex justify-content-between align-items-center">
+                                <div class="ms-2 me-auto">
+                                    <a href="{{ route('detail-artikel', $pengumuman->link) }}"> {{ $pengumuman->nama }}</a><br>
+                                    <span class="badge bg-primary rounded-pill">{{ $pop->created_at->format('Y-m-d') }}</span>
+                                </div>
+                            </li><hr>
+                        </ul>
+                    @endforeach
+                </div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Tus</div>
             </div>                
         </div>
