@@ -26,6 +26,8 @@ use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\VisiMisiHiController;
 use App\Http\Controllers\VisiMisiIlkomController;
 use App\Http\Controllers\TambahKategoriController;
+use App\Http\Controllers\VisiMisiLaboratoriumPgpaud;
+use App\Http\Controllers\VisiMisiLaboratoriumPgpaudController;
 use App\Http\Controllers\VisiMisiPgpaudController;
 
 /*
@@ -77,6 +79,7 @@ Route::middleware(['web', 'auth', 'App\Http\Middleware\CheckUserActivity'])->gro
     Route::resource('visimisihi', VisiMisiHiController::class);
     Route::resource('visimisiilkom', VisiMisiIlkomController::class);
     Route::resource('visimisipgpaud', VisiMisiPgpaudController::class);
+    Route::resource('visimisilaboratoriumpgpapud', VisiMisiLaboratoriumPgpaudController::class);
     Route::resource('jabatan', JabatanController::class);
     Route::resource('dekan', DekanController::class);
     Route::resource('hi', HiController::class);

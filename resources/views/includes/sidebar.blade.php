@@ -117,6 +117,11 @@
                                     <span class="sub-item"> Visi Misi PG-PAUD</span>
                                 </a>
                             </li>
+                            <li class="@yield('visimisilaboratoriumpgpaud')">
+                                <a href="{{ route('visimisilaboratoriumpgpapud.index') }}">
+                                    <span class="sub-item">Visi Misi Laboratorium PG-PAUD</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -263,6 +268,11 @@
                                 <li class="@yield('visimisipgpaud')">
                                     <a href="{{ route('visimisipgpaud.index') }}">
                                         <span class="sub-item"> Visi Misi PG-PAUD</span>
+                                    </a>
+                                </li>
+                                <li class="@yield('visimisilaboratoriumpgpaud')">
+                                    <a href="{{ route('visimisilaboratoriumpgpaud.index') }}">
+                                        <span class="sub-item">Visi Misi Lab PG-PAUD</span>
                                     </a>
                                 </li>
                             </ul>
