@@ -19,11 +19,11 @@ class PgpaudController extends Controller
     {
         $pgpaud = Pgpaud::all();
         $pgpaudWithSpecificJabatan = Pgpaud::join('jabatan', 'pgpaud.jabatan_id', '=', 'jabatan.id')
-                    ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', 1, 0)")
-                    ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', pgpaud.nama, '')")
-                    ->orderBy('jabatan.id')
-                    ->orderBy('nama', 'asc')
-                    ->get();
+                                    ->orderByRaw("CASE WHEN jabatan.nama_jabatan = 'Dosen' THEN 1 ELSE 0 END")
+                                    ->orderByRaw("CASE WHEN jabatan.nama_jabatan = 'Dosen' THEN pgpaud.nama ELSE '' END")
+                                    ->orderBy('jabatan.id')
+                                    ->select('pgpaud.*', 'jabatan.nama_jabatan')
+                                    ->get();
         $jabatan = Jabatan::all();
 
         $title = 'Hapus Data!';

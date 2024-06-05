@@ -53,12 +53,15 @@ Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 // Route::get('/hi', [FrontendController::class, 'hi'])->name('hi');
 Route::get('/detail-artikel/{slug}', [FrontendController::class, 'detail'])->name('detail-artikel');
 Route::get('/his', [FrontendController::class, 'hubi'])->name('hubi');
-Route::get('/ilkoms', [FrontendController::class, 'mukom'])->name('mukom');
+Route::get('/ilmu-komunikasi', [FrontendController::class, 'mukom'])->name('mukom');
 Route::get('/pgpauds', [FrontendController::class, 'guru'])->name('guru');
 Route::get('/penjaminan-mutu', [FrontendController::class, 'penjaminan'])->name('penjaminan-mutu');
 Route::get('/pengumuman_fiskep', [FrontendController::class, 'pengumuman_fiskep'])->name('pengumuman_fiskep');
 Route::post('/email', [FrontendController::class, 'email'])->name('email');
-Route::get('/akademik-fiskep', [FrontendController::class, 'akademiks'])->name('akademiks');;
+Route::get('/akademik-fiskep', [FrontendController::class, 'akademiks'])->name('akademiks');
+Route::get('/fasilitas_hi', [FrontendController::class, 'fasilitas_hi'])->name('fasilitas_hi');
+Route::get('/fasilitas_ilkom', [FrontendController::class, 'fasilitas_ilkom'])->name('fasilitas_ilkom');
+Route::get('/fasilitas_pgpaud', [FrontendController::class, 'fasilitas_pgpaud'])->name('fasilitas_pgpaud');
 
 Auth::routes(['register' => false]);
 

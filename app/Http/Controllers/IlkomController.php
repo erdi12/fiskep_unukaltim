@@ -20,11 +20,11 @@ class IlkomController extends Controller
         $ilkom = Ilkom::all();
 
         $ilkomWithSpecificJabatan = Ilkom::join('jabatan', 'ilkom.jabatan_id', '=', 'jabatan.id')
-                    ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', 1, 0)")
-                    ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', ilkom.nama, '')")
-                    ->orderBy('jabatan.id')
-                    ->orderBy('nama', 'asc')
-                    ->get();
+                                    ->orderByRaw("CASE WHEN jabatan.nama_jabatan = 'Dosen' THEN 1 ELSE 0 END")
+                                    ->orderByRaw("CASE WHEN jabatan.nama_jabatan = 'Dosen' THEN ilkom.nama ELSE '' END")
+                                    ->orderBy('jabatan.id')
+                                    ->select('ilkom.*', 'jabatan.nama_jabatan')
+                                    ->get();
 
         $title = 'Hapus Data!';
         $text = 'Apakah Anda Yakin?';

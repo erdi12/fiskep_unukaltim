@@ -146,7 +146,7 @@ class FrontendController extends Controller
     }
 
     public function guru() {
-        
+        $positions = ['Laboran'];
         $guru = Pgpaud::first();
         $guru2 = Pgpaud::get()->skip(1)->take(1);
         $guru3 = Pgpaud::get()->skip(2);
@@ -207,4 +207,15 @@ class FrontendController extends Controller
         return view('front.akademik.akademik', compact('akademik'));
     }
 
+    public function fasilitas_hi() {
+        return view('front.fasilitas_hi.fasilitas_hi');
+    }
+
+    public function fasilitas_ilkom() {
+        return view('front.fasilitas_ilkom.fasilitas_ilkom');
+    }
+
+    public function fasilitas_pgpaud() {
+        return view('front.fasilitas_pgpaud.fasilitas_pgpaud');
+    }
 }

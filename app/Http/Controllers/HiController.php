@@ -18,11 +18,13 @@ class HiController extends Controller
     public function index()
     {
         $hi = Hi::all();
+
         $hiWithSpecificJabatan = Hi::join('jabatan', 'hi.jabatan_id', '=', 'jabatan.id')
-                    ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', 1, 0)")
-                    ->orderByRaw("IF(jabatan.nama_jabatan = 'Dosen', hi.nama, '')")
-                    ->orderBy('jabatan.id')
-                    ->get();
+                                    ->orderByRaw("CASE WHEN jabatan.nama_jabatan = 'Dosen' THEN 1 ELSE 0 END")
+                                    ->orderByRaw("CASE WHEN jabatan.nama_jabatan = 'Dosen' THEN hi.nama ELSE '' END")
+                                    ->orderBy('jabatan.id')
+                                    ->select('hi.*', 'jabatan.nama_jabatan')
+                                    ->get();
 
         $title = 'Hapus Data!';
         $text = 'Apakah Anda Yakin?';

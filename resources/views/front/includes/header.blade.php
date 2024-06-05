@@ -1,4 +1,4 @@
- <!-- Navbar Start -->
+<!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="{{ route('index') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <img src="{{ asset('elearning/img/logo-fiskep-01.png') }}" class="img-fluid" width="230">
@@ -23,6 +23,14 @@
                     <div class="dropdown-menu fade-down m-0">
                         <a href="{{ route('penjaminan-mutu') }}" class="dropdown-item @yield('lpm')">LPM</a>
                         <a href="{{ url('notfound') }}" class="dropdown-item">LPPM</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle @yield('fasilitas')" data-bs-target="dropdown">Fasilitas</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="{{ route('fasilitas_hi') }}" class="dropdown-item @yield('fasilitas_hi')">Hubungan Internasional</a>
+                        <a href="{{ route('fasilitas_ilkom') }}" class="dropdown-item">Ilmu Komunikasi</a>
+                        <a href="{{ route('fasilitas_pgpaud') }}" class="dropdown-item @yield('fasilitas_pgpaud')">Pendidikan Guru - Pendidikan Anak Usia Dini</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
