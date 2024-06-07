@@ -13,11 +13,13 @@ use App\Models\Pgpaud;
 use App\Mail\SendEmail;
 use App\Models\Akademik;
 use App\Models\Artikel;
+use App\Models\Jabatan;
 use App\Models\Kategori;
 use App\Models\Pengumuman;
 use App\Models\VisiMisi;
 use App\Models\VisiMisiHi;
 use App\Models\VisiMisiIlkom;
+use App\Models\VisiMisiLaboratoriumPgpaud;
 use App\Models\VisiMisiPgpaud;
 use Faker\Provider\ar_EG\Address;
 use Illuminate\Http\Request;
@@ -216,6 +218,26 @@ class FrontendController extends Controller
     }
 
     public function fasilitas_pgpaud() {
-        return view('front.fasilitas_pgpaud.fasilitas_pgpaud');
+
+        $jabatan_nama = ['Dekan', 'Ketua Program Studi', 'Sekretaris Program Studi', 'Dosen', 'Laboran', 'Koordinator Laboratorium', 'Penanggung Jawab Lab Sentra', 'Penanggung Jawab Lab Neurosains', 'Penanggung Jawab Lab Micro Teaching'];
+        $visimisilaboratoriumpgpaud = VisiMisiLaboratoriumPgpaud::first();
+        
+        $jabatan_dekan = Jabatan::where('nama_jabatan', 'Dekan')->first();
+        $dekan = Dekan::where('jabatan_id', $jabatan_dekan->id)->first();
+
+        $jabatan = Jabatan::whereIn('nama_jabatan', $jabatan_nama)->pluck('id');
+        $pgpaud = Pgpaud::whereIn('jabatan_id', $jabatan)->get();
+        $kaprodi = $pgpaud->filter(function($item) {
+            return in_array($item->jabatan->nama_jabatan, ['Ketua Program Studi', 'Laboran']);
+        });
+        $koor_laboran = $pgpaud->filter(function($item) {
+            return in_array($item->jabatan->nama_jabatan, ['Koordinator Laboratorium']);
+        });
+        $laboran = $pgpaud->filter(function($item) {
+            return !in_array($item->jabatan->nama_jabatan, ['Dekan', 'Ketua Program Studi', 'Sekretaris Program Studi', 'Dosen', 'Laboran', 'Koordinator Laboratorium']);
+        });
+
+        return view('front.fasilitas_pgpaud.fasilitas_pgpaud', compact('visimisilaboratoriumpgpaud','jabatan', 'dekan', 'kaprodi', 'koor_laboran', 'laboran'));
+
     }
 }

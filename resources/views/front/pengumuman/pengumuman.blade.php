@@ -28,7 +28,7 @@
                                     <td>{{ $row->nama }}</td>
                                     <td class="text-center">{{ $row->created_at->formatLocalized('%d %B %Y') }}</td>
                                     <td class="text-center">
-                                        <a href="{{ $row->link }}" target="_blank">Klk Disini</a>
+                                        <a href="{{ $row->link }}" target="_blank">Klik Disini</a>
                                     </td>
                                 </tr>
                             @endforeach                            

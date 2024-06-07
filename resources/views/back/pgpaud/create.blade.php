@@ -28,7 +28,7 @@
 					</div>
 				</div>
 				<div class="card-body">
-					{{-- @if ($errors->any())
+					@if ($errors->any())
 					<div class="alert alert-danger">
 						<ul>
 							@foreach ($errors->all() as $error)
@@ -36,7 +36,7 @@
 							@endforeach
 						</ul>
 					</div>
-					@endif --}}
+					@endif
 					<form method="POST" action="{{ route('pgpaud.store') }}" enctype="multipart/form-data">
 						@csrf
 						<div class="form-group">
