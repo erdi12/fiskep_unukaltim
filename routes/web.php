@@ -22,6 +22,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GaleriLabPgpaudController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\VisiMisiHiController;
 use App\Http\Controllers\VisiMisiIlkomController;
@@ -29,6 +30,7 @@ use App\Http\Controllers\TambahKategoriController;
 use App\Http\Controllers\VisiMisiLaboratoriumPgpaud;
 use App\Http\Controllers\VisiMisiLaboratoriumPgpaudController;
 use App\Http\Controllers\VisiMisiPgpaudController;
+use App\Models\GaleriLabPgpaud;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,5 +90,6 @@ Route::middleware(['web', 'auth', 'App\Http\Middleware\CheckUserActivity'])->gro
     Route::resource('lpm', LpmController::class);
     Route::resource('pengumuman', PengumumanController::class);
     Route::resource('akademik', AkademikController::class);
+    Route::resource('galerilabpgpaud', GaleriLabPgpaudController::class);
     Route::get('/tambah-kategori', [TambahKategoriController::class, 'create'])->name('tambah-kategori');
 });

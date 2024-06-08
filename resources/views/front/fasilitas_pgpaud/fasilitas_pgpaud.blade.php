@@ -114,7 +114,7 @@
                     <p>FAKULTAS ILMU SOSIAL DAN KEPENDIDIKAN UNIVERSITAS NAHDLATUL ULAMA KALIMANTAN TIMUR</p>
                 </div>
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h4 class="mb-3 text-center">Visi</h4>
+                    <h3 class="mb-3 text-center">Visi</h3>
                     <div class="text-center">
 
                         <i class="fa fa-3x fa-graduation-cap text-center text-primary mb-4"></i>
@@ -124,7 +124,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h4 class="mb-3 text-center">Misi</h4>
+                    <h3 class="mb-3 text-center">Misi</h3>
                     <div class="text-center">
 
                         <i class="fa fa-3x fa-globe text-center text-primary mb-4"></i>

@@ -173,6 +173,12 @@
                         <p>Slide Banner</p>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->is('galerilabpgpaud*') ? 'active' : '' }}">
+                    <a href="{{ route('galerilabpgpaud.index') }}">
+                        <i class="fas fa-digital-tachograph"></i>
+                        <p>Galeri Lab Pgpaud</p>
+                    </a>
+                </li>
                 <li class="nav-item {{ request()->is('iklan*') ? 'active' : '' }}">
                     <a href="{{ route('iklan.index') }}">
                         <i class="fas fa-money-bill"></i>

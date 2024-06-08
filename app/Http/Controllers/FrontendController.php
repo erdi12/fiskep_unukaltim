@@ -151,10 +151,14 @@ class FrontendController extends Controller
         $positions = ['Laboran'];
         $guru = Pgpaud::first();
         $guru2 = Pgpaud::get()->skip(1)->take(1);
-        $guru3 = Pgpaud::get()->skip(2);
+        $guru3 = Pgpaud::join('jabatan', 'pgpaud.jabatan_id', '=', 'jabatan.id')
+                        ->whereIn('jabatan.nama_jabatan', $positions)
+                        ->orderByRaw("FIELD(jabatan.nama_jabatan, '" . implode("','", $positions) . "')")
+                        ->get();
+        $guru4 = Pgpaud::get()->skip(3);
         $guru_visimisi = VisiMisiPgpaud::first();
 
-        return view('front.guru.guru', compact('guru','guru2','guru3', 'guru_visimisi'));
+        return view('front.guru.guru', compact('guru','guru2','guru3', 'guru4', 'guru_visimisi'));
     }
 
     public function contact() {
