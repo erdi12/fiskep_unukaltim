@@ -15,13 +15,6 @@
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="{{ asset('uploads/'.$mukom->foto) }}" alt="">
                         </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
                         <div class="text-center p-4">
                             <h5 class="mb-0"> {{ $mukom->nama}} </h5>
                             <small> {{ $mukom->jabatan->nama_jabatan }} </small>
@@ -35,13 +28,6 @@
                         <div class="team-item bg-light">
                             <div class="overflow-hidden">
                                 <img class="img-fluid" src="{{ asset('uploads/'.$item->foto) }}" alt="">
-                            </div>
-                            <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                                <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
                             </div>
                             <div class="text-center p-4">
                                 <h5 class="mb-0"> {{ $item->nama}} </h5>
@@ -58,13 +44,6 @@
                             <div class="overflow-hidden">
                                 <img class="img-fluid" src="{{ asset('uploads/'.$item->foto) }}" alt="">
                             </div>
-                            <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                                <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
                             <div class="text-center p-4">
                                 <h5 class="mb-0"> {{ $item->nama}} </h5>
                                 <small> {{ $item->jabatan->nama_jabatan }} </small>
@@ -80,13 +59,6 @@
                             <div class="overflow-hidden">
                                 <img class="img-fluid" src="{{ asset('uploads/'.$row->foto) }}" alt="">
                             </div>
-                            <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                                <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
                             <div class="text-center p-4">
                                 <h5 class="mb-0"> {{ $row->nama}} </h5>
                                 <small> {{ $row->jabatan->nama_jabatan }} </small>
@@ -101,33 +73,34 @@
                     <h2>Visi, Misi, dan Tujuan</h2>
                     <p>VISI, MISI SERTA TUJUAN DAN FAKULTAS ILMU SOSIAL DAN KEPENDIDIKAN UNIVERSITAS NAHDLATUL ULAMA KALIMANTAN TIMUR</p>
                 </div>
-                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item text-center pt-3">
+                <div class="row text-center wow fadeInUp" data-wow-delay="0.15">
+                    <div class="col-lg-12 col-md-6">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
                             <h5 class="mb-3">Visi</h5>
+                            <i class="fa fa-3x fa-graduation-cap text-primary mb-2"></i>
                             <div class="text-start">
                                 <p>{!! $mukom_visimisi->visi !!}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item text-center pt-3">
+                <div class="row text-center wow fadeInUp" data-wow-delay="0.15">
+                    <div class="col-lg-12 col-md-6">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
                             <h5 class="mb-3">Misi</h5>
+                            <i class="fa fa-3x fa-globe text-primary mb-2"></i>
                             <div class="text-start">
                                 <p>{!! $mukom_visimisi->misi !!}</p>
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item text-center pt-3">
+                <div class="row text-center wow fadeInUp" data-wow-delay="0.15">
+                    <div class="col-lg-12 col-md-6">
                         <div class="p-4">
-                            <i class="fa-solid fa-3x fa-arrows-down-to-people text-primary mb-4"></i>
                             <h5 class="mb-3">Tujuan</h5>
+                            <i class="fa fa-3x fa-arrows-down-to-people text-primary mb-2"></i>
                             <div class="text-start">
                                 <p>{!! $mukom_visimisi->tujuan !!}</p>
                             </div>

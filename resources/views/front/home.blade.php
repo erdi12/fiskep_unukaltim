@@ -41,11 +41,11 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="{{ asset('elearning/img/IMG_7716.jpg')}}" alt="" style="object-fit: scale-down;">
+                        <img src="{{ asset('elearning/img/dekan.jpeg')}}" class="img-fluid rounded-2 position-absolute w-100 h-100" alt="" style="object-fit: scale-down;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <h6 class="section-title bg-white text-start text-primary pe-3">Sambutan</h6>
+                    <h6 class="section-title bg-white text-start text-primary pe-3 mt-5">Sambutan</h6>
                     <h1 class="mb-4">Dekan Fakultas Ilmu Sosial dan Kependidikan</h1>
                     <p class="mb-4">Fakultas Ilmu Sosial dan Kependidikan di Kampus ini merupakan wahana pembelajaran yang berkomitmen untuk memberikan pendidikan tinggi dengan nilai-nilai keislaman yang kuat. Sebagai Dekan, saya bersama seluruh staf akademis dan administratif memiliki tekad untuk menciptakan lingkungan belajar yang inklusif, inovatif, dan berorientasi pada karakter.</p>
                     </div>
@@ -64,7 +64,7 @@
                 <h1 class="mb-5">Program Studi Unggulan</h1>
             </div>
             <div class="row justify-content-center text-center wow fadeInUp">
-                <div class="col-lg-4 col-md-6 mb-2">
+                <div class="col-lg-4 col-md-6 mb-3">
                     <div class="card">
                         <div class="text-center">
 
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-2">
+                <div class="col-lg-4 col-md-6 mb-3">
                     <div class="card">
                         <div class="text-center">
 
@@ -118,17 +118,18 @@
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach ($articles as $art)
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="course-item bg-light">
                             <div class="position-relative overflow-hidden">
                                 <img class="img-fluid" src="{{ asset('uploads/'.$art->gambar_artikel)}} " alt="">
-                                <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                    <a href="{{ route('detail-artikel', $art->slug) }}" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 30px">Read More</a>
-                                </div>
+                                
                             </div>
-                            <div class="text-center p-4 pb-0">
-                                <h3 class="mb-0">{{ $art->judul }}</h3>
-                                {{-- <h5 class="mb-4">{!! Str::limit($art->body, 100) !!}</h5> --}}
+                            <div class="text-start p-4 pb-0">
+                                <h4 class="mb-0">{{ $art->judul }}</h4>
+                                <small class="mb-4">{!! Str::limit($art->body, 100) !!}</small>
+                            </div>
+                            <div class="d-flex justify-content-center mb-4">
+                                <a href="{{ route('detail-artikel', $art->slug) }}" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 30px">Read More</a>
                             </div>
                             <div class="d-flex border-top">
                                 <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>{{ $art->users->name }}</small>
@@ -276,4 +277,4 @@
         </div>
     </div> --}}
     <!-- Testimonial End -->
-    @endsection
+@endsection
