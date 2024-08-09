@@ -1,5 +1,6 @@
 @extends('front.layouts.frontend')
 @section('menu', 'active')
+@section('prodi_ilkom', 'active')
 
 @section('content')
     <!-- Team Start -->
@@ -52,7 +53,7 @@
                     </div>
                 @endforeach
             </div>
-            <div class="row justify-content-center g-4">
+            <div class="row justify-content-center mb-4">
                 @foreach ($mukom3 as $row)                    
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item bg-light">
@@ -70,40 +71,42 @@
             <div class="row justify-content-center g-4">
                 @if ($mukom_visimisi)
                 <div class="text-center wow fadeInDown" data-wow-delay="0.15">
-                    <h2>Visi, Misi, dan Tujuan</h2>
-                    <p>VISI, MISI SERTA TUJUAN DAN FAKULTAS ILMU SOSIAL DAN KEPENDIDIKAN UNIVERSITAS NAHDLATUL ULAMA KALIMANTAN TIMUR</p>
+                    <h2>Visi, Misi dan Tujuan</h2>
+                    <p>VISI, MISI SERTA TUJUAN PROGRAM STUDI ILMU KOMUNIKASI</p>
                 </div>
-                <div class="row text-center wow fadeInUp" data-wow-delay="0.15">
-                    <div class="col-lg-12 col-md-6">
-                        <div class="p-4">
-                            <h5 class="mb-3">Visi</h5>
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-2"></i>
-                            <div class="text-start">
-                                <p>{!! $mukom_visimisi->visi !!}</p>
-                            </div>
+                <div class="row justify-content-center text-center mb-3 wow fadeInUp" data-wow-delay="0.15">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="ilkom-visi-animasi" style="width: 300px;"></div>
+                        </div>
+                        {{-- <img src="{{ asset('elearning/img/visi.png') }}" class="img-fluid" alt=""> --}}
+                        <h2>Visi</h2>
+                        <div class="text-wrap">
+                            <p>{!! $mukom_visimisi->visi !!}</p>
                         </div>
                     </div>
                 </div>
-                <div class="row text-center wow fadeInUp" data-wow-delay="0.15">
-                    <div class="col-lg-12 col-md-6">
-                        <div class="p-4">
-                            <h5 class="mb-3">Misi</h5>
-                            <i class="fa fa-3x fa-globe text-primary mb-2"></i>
-                            <div class="text-start">
-                                <p>{!! $mukom_visimisi->misi !!}</p>
-                            </div>
+                <div class="row justify-content-center text-center mb-3 wow fadeInUp"" data-wow-delay="0.15">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="ilkom-misi-animasi" style="width: 300px;"></div>
+                        </div>
+                        {{-- <img src="{{ asset('elearning/img/visi.png') }}" class="img-fluid" alt=""> --}}
+                        <h2>Misi</h2>
+                        <div class="text-wrap">
+                            <p>{!! $mukom_visimisi->misi !!}</p>
                         </div>
                     </div>
-                    </div>
                 </div>
-                <div class="row text-center wow fadeInUp" data-wow-delay="0.15">
-                    <div class="col-lg-12 col-md-6">
-                        <div class="p-4">
-                            <h5 class="mb-3">Tujuan</h5>
-                            <i class="fa fa-3x fa-arrows-down-to-people text-primary mb-2"></i>
-                            <div class="text-start">
-                                <p>{!! $mukom_visimisi->tujuan !!}</p>
-                            </div>
+                <div class="row justify-content-center text-center mb-3 wow fadeInUp"" data-wow-delay="0.15">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="ilkom-tujuan-animasi" style="width: 300px;"></div>
+                        </div>
+                        {{-- <img src="{{ asset('elearning/img/visi.png') }}" class="img-fluid" alt=""> --}}
+                        <h2>Tujuan</h2>
+                        <div class="text-wrap">
+                            <p>{!! $mukom_visimisi->tujuan !!}</p>
                         </div>
                     </div>
                 </div>

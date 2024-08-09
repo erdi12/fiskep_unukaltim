@@ -1,12 +1,13 @@
 @extends('front.layouts.frontend')
 @section('menu', 'active')
+@section('prodi_paud', 'active')
 
 @section('content')
     <!-- Team Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Pendidikan Guru - Pendidikan Anak Usia Dini</h6>
+                <h6 class="section-title bg-white text-center text-primary px-3">endidikan Anak Usia Dini</h6>
                 <h1 class="mb-3">Expert Lecturer</h1>
             </div>
             <div class="row justify-content-center mb-4">
@@ -69,42 +70,62 @@
             </div>
             <div class="row justify-content-center g-4">
                 @if ($guru_visimisi)
-                <div class="text-center wow fadeInDown" data-wow-delay="0.15">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.15">
                     <h2>Visi, Misi, dan Tujuan</h2>
-                    <p>VISI, MISI SERTA TUJUAN PENDIDIKAN GURU - PENDIDIKAN ANAK USIA DINI</p>
+                    <p>VISI, MISI SERTA TUJUAN PROGRAM STUDI PENDIDIKAN GURU - PENDIDIKAN ANAK USIA DINI</p>
                 </div>
-                <div class="row text-center wow fadeInUp" data-wow-delay="0.15">
-                    <div class="col-lg-12 col-md-6">
-                        <div class="p-4">
-                            <h5 class="mb-3">Visi</h5>
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-2"></i>
-                            <div class="text-start">
-                                <p>{!! $guru_visimisi->visi !!}</p>
-                            </div>
+                <div class="row justify-content-center text-center mb-3 wow fadeInUp" data-wow-delay="0.15">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="paud-visi-animasi" style="width: 300px;"></div>
+                        </div>
+                        {{-- <img src="{{ asset('elearning/img/visi.png') }}" class="img-fluid" alt=""> --}}
+                        <h2>Visi</h2>
+                        <div class="text-wrap">
+                            <p>{!! $guru_visimisi->visi !!}</p>
                         </div>
                     </div>
+                    
+                    
                 </div>
-                <div class="row text-center wow fadeInUp" data-wow-delay="0.15">
-                    <div class="col-lg-12 col-md-6">
-                        <div class="p-4">
-                            <h5 class="mb-3">Misi</h5>
-                            <i class="fa fa-3x fa-globe text-primary mb-2"></i>
-                            <div class="text-start">
-                                <p>{!! $guru_visimisi->misi !!}</p>
-                            </div>
+                <div class="row justify-content-center text-center mb-3 wow fadeInUp" data-wow-delay="0.15">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="paud-misi-animasi" style="width: 300px;"></div>
                         </div>
-                    </div>
+                        {{-- <img src="{{ asset('elearning/img/misi.png') }}" class="img-fluid" alt=""> --}}
+                        <h2>Misi</h2>
+                        <div class="text-start">
+                            <p>{!! $guru_visimisi->misi !!}</p>
+                        </div>
+                        {{-- <div class="card border-dark">
+                            <h2 class="card-header bg-dark text-bg-primary"><i class="fa fa-globe text-light" width="1em"></i><br>Misi</h2>
+                            <div class="card-body">
+                                <div class="text-start">
+                                    <p>{!! $guru_visimisi->misi !!}</p>
+                                </div>
+                            </div>
+                        </div> --}}
                     </div>
                 </div>
-                <div class="row text-center wow fadeInUp" data-wow-delay="0.15">
-                    <div class="col-lg-12 col-md-6">
-                        <div class="p-4">
-                            <h5 class="mb-3">Tujuan</h5>
-                            <i class="fa fa-3x fa-arrows-down-to-people text-primary mb-2"></i>
-                            <div class="text-start">
-                                <p>{!! $guru_visimisi->tujuan !!}</p>
-                            </div>
+                <div class="row justify-content-center text-center mb-3 wow fadeInUp" data-wow-delay="0.15">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="paud-tujuan-animasi" style="width: 300px;"></div>
                         </div>
+                        {{-- <img src="{{ asset('elearning/img/tujuan.png') }}" class="img-fluid" alt=""> --}}
+                        <h2>Tujuan</h2>
+                        <div class="text-start">
+                            <p>{!! $guru_visimisi->tujuan !!}</p>
+                        </div>
+                        {{-- <div class="card border-dark">
+                            <h2 class="card-header bg-dark text-bg-primary"><x-clarity-bullseye-line width="1.2em" /></i><br>Tujuan</h2>
+                            <div class="card-body">
+                                <div class="text-start">
+                                    <p>{!! $guru_visimisi->tujuan !!}</p>
+                                </div>
+                            </div>
+                        </div> --}}
                     </div>
                 </div>
                 @endif

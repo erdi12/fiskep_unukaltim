@@ -61,7 +61,7 @@ class VisiMisiIlkomController extends Controller
     {
         $visimisiilkom = VisiMisiIlkom::findOrFail($id);
 
-        return view('back.vismisiilkom.edit', compact('visimiilkom'));
+        return view('back.vismisiilkom.edit', compact('visimisiilkom'));
     }
 
     /**
@@ -87,7 +87,7 @@ class VisiMisiIlkomController extends Controller
             'tujuan' => $request->tujuan
         ]);
 
-        return redirect()->route('vismisiilkom.index')->with(['success' => 'Data Berhasil Diupdate']);
+        return redirect()->route('visimisiilkom.index')->with(['success' => 'Data Berhasil Diupdate']);
     }
 
     /**

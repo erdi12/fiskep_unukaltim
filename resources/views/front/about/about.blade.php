@@ -120,87 +120,46 @@
                 </div>
                 @if ($visimisi)
                 <div class="text-center wow fadeInUp" data-wow-delay="0.15">
-                    <h2>Visi, Misi, dan Tujuan</h2>
+                    <h2>Visi, Misi dan Tujuan</h2>
                     <p>VISI, MISI SERTA TUJUAN DAN FAKULTAS ILMU SOSIAL DAN KEPENDIDIKAN UNIVERSITAS NAHDLATUL ULAMA KALIMANTAN TIMUR</p>
                 </div>
-                <div class="row text-center wow fadeInUp" data-wow-delay="0.15">
-                    <div class="col-lg-12 col-md-6">
-                        <div class="p-4">
-                            <h5 class="mb-3">Visi</h5>
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-2"></i>
-                            <div class="text-start">
-                                <p>{!! $visimisi->visi !!}</p>
-                            </div>
+                <div class="row justify-content-center text-center mb-3 wow fadeInUp" data-wow-delay="0.15">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="fiskep-visi-animasi" style="width: 300px;"></div>
+                        </div>
+                        {{-- <img src="{{ asset('elearning/img/visi.png') }}" class="img-fluid" alt=""> --}}
+                        <h2>Visi</h2>
+                        <div class="text-wrap">
+                            <p>{!! $visimisi->visi !!}</p>
                         </div>
                     </div>
                 </div>
-                <div class="row text-center wow fadeInUp" data-wow-delay="0.15">
-                    <div class="col-lg-12 col-md-6">
-                        <div class="p-4">
-                            <h5 class="mb-3">Misi</h5>
-                            <i class="fa fa-3x fa-globe text-primary mb-2"></i>
-                            <div class="text-start">
-                                <p>{!! $visimisi->misi !!}</p>
-                            </div>
+                <div class="row justify-content-center text-center mb-3 wow fadeInUp" data-wow-delay="0.15">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="fiskep-misi-animasi" style="width: 300px;"></div>
                         </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="row text-center wow fadeInUp" data-wow-delay="0.15">
-                    <div class="col-lg-12 col-md-6">
-                        <div class="p-4">
-                            <h5 class="mb-3">Tujuan</h5>
-                            <i class="fa fa-3x fa-arrows-down-to-people text-primary mb-2"></i>
-                            <div class="text-start">
-                                <p>{!! $visimisi->tujuan !!}</p>
-                            </div>
+                        {{-- <img src="{{ asset('elearning/img/visi.png') }}" class="img-fluid" alt=""> --}}
+                        <h2>Misi</h2>
+                        <div class="text-wrap">
+                            <p>{!! $visimisi->misi !!}</p>
                         </div>
                     </div>
                 </div>
-                
-                {{-- <div class="col-lg-6 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                            <h5 class="mb-3">Visi</h5>
-                            <div class="text-start">
-                                <p>{!! $visimisi->visi !!}</p>
-                            </div>
+                <div class="row justify-content-center text-center mb-3 wow fadeInUp" data-wow-delay="0.15">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div id="fiskep-tujuan-animasi" style="width: 300px;"></div>
+                        </div>
+                        {{-- <img src="{{ asset('elearning/img/visi.png') }}" class="img-fluid" alt=""> --}}
+                        <h2>Tujuan</h2>
+                        <div class="text-wrap">
+                            <p>{!! $visimisi->tujuan !!}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5 class="mb-3">Misi</h5>
-                            <div class="text-start">
-                                <p>{!! $visimisi->misi !!}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa-solid fa-3x fa-arrows-down-to-people text-primary mb-4"></i>
-                            <h5 class="mb-3">Tujuan</h5>
-                            <div class="text-start">
-                                <p>{!! $visimisi->tujuan !!}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
                 @endif
-                {{-- <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
-                            <h5 class="mb-3">Book Library</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </div>

@@ -50,8 +50,8 @@
             @foreach ($category as $cat)
             <div class="d-flex flex-wrap">
                     <a href="{{ route('kategori-berita', ['kategoriSlug' => $cat->slug]) }}">
-                        <p>{{ $cat->nama_kategori }}</p>
-                    </a><br>
+                        <p class="text-wrap">{{ $cat->nama_kategori }}</p>
+                    </a>
                     <p class="ms-auto text-right"><span class="badge bg-dark">{{ $cat->articles->count() }}</span></p>
                 </div>
             @endforeach

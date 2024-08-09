@@ -2,7 +2,7 @@
     @section('content')
     @include('front.includes.slider')
 
-    <div id="myModal" class="modal fade" tabindex="-1" data-backdrop="static">
+    {{-- <div id="myModal" class="modal fade" tabindex="-1" data-backdrop="static">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
@@ -34,7 +34,69 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+
+    <!-- Categories Start -->
+    <div class="container-xxl py-5 category">
+        <div class="container">
+            {{-- <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Program Studi</h6>
+                <h1 class="mb-5">Program Studi Unggulan</h1>
+            </div> --}}
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-4 col-md-6 mb-3 mt-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="card border-0 p-3 position-relative">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div id="isi-krs-animasi" class="card-img-top img-fluid rounded-circle position-absolute top-0 start-50 translate-middle" style="width: 35%"></div>
+                            </div>
+                            <h5 class="card-title mt-5 pt-3">Pengisian KRS</h5>
+                            <p class="card-text">Jangan lupa isi KRSnya ya :)</p>
+                            <a href="https://unukaltim.siakad.my.id/isikrs" target="_blank" class="btn btn-dark">Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-3 mt-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="card border-0 p-3 mt-3 mt-md-0 position-relative">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div id="siakad-animasi" class="card-img-top img-fluid rounded-circle position-absolute top-0 start-50 translate-middle" style="width: 40%"></div>
+                            </div>
+                            <h5 class="card-title mt-5 pt-3">SIAKAD</h5>
+                            <p class="card-text">Untuk cek jadwal dan dosen disini ya 😊</p>
+                            <a href="https://unukaltim.siakad.my.id" target="_blank" class="btn btn-dark">Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-3 mt-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="card border-0 p-3 mt-3 mt-md-0 position-relative">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div id="elearning-animasi" class="card-img-top img-fluid rounded-circle position-absolute top-0 start-50 translate-middle" style="width: 35%"></div>
+                            </div>
+                            <h5 class="card-title mt-5 pt-3">E-Learning</h5>
+                            <p class="card-text">Disini tempat ujian onlinenya 🤓</p>
+                            <a href="https://elearning.unukaltim.ac.id" target="_blank" class="btn btn-dark">Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-3 mt-4 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="card border-0 p-3 mt-3 mt-md-3 position-relative">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div id="perpustakaan-animasi" class="card-img-top img-fluid rounded-circle position-absolute top-0 start-50 translate-middle" style="width: 35%"></div>
+                            </div>
+                            <h5 class="card-title mt-5 pt-3">Perpustakaan</h5>
+                            <p class="card-text">Disini tempat untuk baca buku penunjangmu ya 😁</p>
+                            <a href="https://olib.unukaltim.ac.id" target="_blank" class="btn btn-dark">Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- Categories Start -->
+
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -65,41 +127,32 @@
             </div>
             <div class="row justify-content-center text-center wow fadeInUp">
                 <div class="col-lg-4 col-md-6 mb-3">
-                    <div class="card">
-                        <div class="text-center">
-
+                    <div class="service-item text-center">
+                        <div class="p-4">
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Hubungan Internasional</h5>
-                            <p class="card-text">Program Sarjana (S-1)</p>
-                            <a href="{{ route('hubi') }}" class="btn btn-primary">Lihat Selengkapnya</a>
+                            <h5>Hubungan Internasional</h5>
+                            <p>Program Sarjana (S-1)</p>
+                            <a href="{{ route('hubi') }}" class="btn btn-dark">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-3">
-                    <div class="card">
-                        <div class="text-center">
-
+                    <div class="service-item text-center">
+                        <div class="p-4">
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Ilmu Komunikasi</h5>
-                            <p class="card-text">Program Sarjana (S-1)</p>
-                            <a href="{{ route('mukom') }}" class="btn btn-primary">Lihat Selengkapnya</a>
+                            <h5>Ilmu Komunikasi</h5>
+                            <p>Program Sarjana (S-1)</p>
+                            <a href="{{ route('mukom') }}" class="btn btn-dark">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <div class="text-center">
-
+                    <div class="service-item text-center">
+                        <div class="p-4">
                             <img src="{{asset('back/img/unu-kaltim.png')}}" style="width: 30%" class="card-img-top img-fluid" alt="...">
-                        </div>
-                        <div class="card-body">
                             <h6 class="card-title">Pendidikan Guru - Pendidikan Anak Usia Dini</h6>
                             <p class="card-text">Program Sarjana (S-1)</p>
-                            <a href="{{ route('guru') }}" class="btn btn-primary">lihat Selengkapnya</a>
+                            <a href="{{ route('guru') }}" class="btn btn-dark">lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -109,7 +162,7 @@
     <!-- Categories Start -->
 
 
-    <!-- Courses Start -->
+    <!-- Berita Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -144,7 +197,7 @@
             </div>
         </div>
     </div>
-    <!-- Courses End -->
+    <!-- Berita End -->
 
 
     {{-- <!-- Team Start -->

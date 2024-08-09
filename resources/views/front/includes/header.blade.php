@@ -13,9 +13,17 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle @yield('menu')" data-bs-toggle="dropdown">Program Studi</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="{{ route('hubi') }}" class="dropdown-item {{ request()->is('hubi') ? 'active' : '' }}">Hubungan Internasional</a>
-                        <a href="{{ route('mukom') }}" class="dropdown-item {{ request()->is('mukom') ? 'active' : '' }}">Ilmu Komunikasi</a>
-                        <a href="{{ route('guru') }}" class="dropdown-item {{ request()->is('guru') ? 'active' : '' }}">Pendidikan Guru - Pendidikan Anak Usia Dini</a>
+                        <a href="{{ route('hubi') }}" class="dropdown-item @yield('prodi_hi')">Hubungan Internasional</a>
+                        <a href="{{ route('mukom') }}" class="dropdown-item @yield('prodi_ilkom')">Ilmu Komunikasi</a>
+                        <a href="{{ route('guru') }}" class="dropdown-item @yield('prodi_paud')">Pendidikan Guru - Pendidikan Anak Usia Dini</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle @yield('informasi')" data-bs-toggle="dropdown">Informasi</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="{{ route('akademiks') }}" class="dropdown-item @yield('akademik')">Akademik</a>
+                        <a href="{{ route('berita') }}" class="dropdown-item @yield('berita')">Berita</a>
+                        <a href="{{ route('pengumuman_fiskep') }}" class="dropdown-item @yield('pengumuman')">Pengumuman</a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
@@ -26,19 +34,11 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle @yield('fasilitas')" data-bs-toggle="dropdown">Fasilitas</a>
+                    <a href="#" class="nav-link dropdown-toggle @yield('fasilitas')" data-bs-toggle="dropdown">Fasilitas Laboratorium</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="{{ route('fasilitas_hi') }}" class="dropdown-item @yield('fasilitas_hi')">Hubungan Internasional</a>
                         <a href="{{ route('fasilitas_ilkom') }}" class="dropdown-item">Ilmu Komunikasi</a>
                         <a href="{{ route('fasilitas_pgpaud') }}" class="dropdown-item @yield('fasilitas_pgpaud')">Pendidikan Guru - Pendidikan Anak Usia Dini</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle @yield('informasi')" data-bs-toggle="dropdown">Informasi</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="{{ route('akademiks') }}" class="dropdown-item @yield('akademik')">Akademik</a>
-                        <a href="{{ route('berita') }}" class="dropdown-item @yield('berita')">Berita</a>
-                        <a href="{{ route('pengumuman_fiskep') }}" class="dropdown-item @yield('pengumuman')">Pengumuman</a>
                     </div>
                 </div>
                 <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>

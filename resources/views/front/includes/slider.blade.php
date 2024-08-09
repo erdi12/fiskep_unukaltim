@@ -1,6 +1,6 @@
 <!-- Carousel Start -->
 <div class="container-fluid p-0">
-    <div class="owl-carousel header-carousel position-relative">
+    <div class="owl-carousel header-carousel position-relative mb-3">
         @foreach ($slide as $row)            
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="{{ asset('uploads/'.$row->gambar_slide) }} " alt="">
